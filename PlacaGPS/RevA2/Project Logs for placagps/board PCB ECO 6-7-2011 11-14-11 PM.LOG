@@ -1,0 +1,4 @@
+Added Component: Designator=C_RESET(C_NANO_HOLES)
+Added Pin To Net: NetName=GND Pin=C_RESET-1
+Added Pin To Net: NetName=GPS_RESETIN Pin=C_RESET-2
+Added Member To Class: ClassName=schematic Member=Component C_RESET 100nF

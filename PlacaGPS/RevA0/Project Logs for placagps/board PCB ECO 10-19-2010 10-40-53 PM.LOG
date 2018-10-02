@@ -1,0 +1,6 @@
+Added Component: Designator=J0(DC_POWER)
+Added Pin To Net: NetName=NetD1_1 Pin=J0-1
+Added Pin To Net: NetName=GND Pin=J0-2
+Added Pin To Net: NetName=GND Pin=J0-3
+Added Member To Class: ClassName=schematic Member=Component J0 PWR2.5
+Added Member To Class: ClassName=schematic Member=Component P1 MHDR1X3

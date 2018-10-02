@@ -1,0 +1,6 @@
+Change Component DesignItemId : Designator=USB Old DesignItemId=Header 2 New DesignItemId=Header 4
+Change Component Comment : Designator=PWR_SW Old Comment=Header 2H New Comment=Header 2
+Change Component Comment : Designator=RESET Old Comment=Header 2H New Comment=Header 2
+Change Component Comment : Designator=PWR Old Comment=Header 3H New Comment=Header 3
+Change Component Designator: OldDesignator=MAX485 NewDesignator=IMU_MAX485
+Change Component Description : Designator=USB Old Description=Header, 2-Pin New Description=Header, 4-Pin

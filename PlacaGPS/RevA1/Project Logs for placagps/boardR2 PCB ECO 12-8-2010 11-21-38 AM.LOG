@@ -1,0 +1,4 @@
+Added Component: Designator=C_IMU3(C_NANO_HOLES)
+Added Pin To Net: NetName=GND Pin=C_IMU3-1
+Added Pin To Net: NetName=5V Pin=C_IMU3-2
+Added Member To Class: ClassName=schematic Member=Component C_IMU3 Cap

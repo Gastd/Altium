@@ -1,0 +1,12 @@
+[Altium]
+
+Esta pasta contém os arquivos relativos ao projeto da placa de interface GPS/UMI no Altium Designer Winter 10.
+
+* Footprint Libraries *
+
+Cada uma das pastas (Atmel, Maxim, NSC, ST, TI) contém footprints para componentes destes fabricantes, alguns os quais foram utilizados no projeto da placa de interface.
+
+* PlacaGPS *
+
+Cada uma das pastas (Rev0, Rev1, Rev2) contém o projeto correspondente a uma das versões da placa de interface. Na revisão 2, há duas placas, sendo que a boardBIG.PcbDoc acabou sendo fabricada.
+

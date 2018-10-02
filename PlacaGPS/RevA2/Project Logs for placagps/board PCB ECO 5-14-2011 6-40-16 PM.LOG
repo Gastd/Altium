@@ -1,0 +1,2 @@
+Change Component Footprint: Designator=PV_LED Old Footprint=MHDR1X2 New Footprint=HDR1X2H
+Change Component Footprint: Designator=PWR_LED Old Footprint=MHDR1X2 New Footprint=HDR1X2H

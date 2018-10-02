@@ -1,0 +1,20 @@
+Altium Limited
+
+
+Atmel
+Batch Number 061207
+
+
+Record of Contents
+~~~~~~~~~~~~~~~~~~
+Atmel Microcontroller 16-Bit ARM.IntLib
+Atmel Microcontroller 32-Bit ARM.IntLib
+Atmel Microcontroller 8-Bit AVR.IntLib
+Atmel AT6000.IntLib
+Atmel AT40K.IntLib
+Atmel AT94K.IntLib
+Atmel Industry Compatible CPLD.IntLib
+Atmel Industry Standard SPLD.IntLib
+Atmel Memory EEPROM.IntLib
+Atmel Proprietary CPLD.IntLib
+Log_061207.txt

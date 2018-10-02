@@ -1,0 +1,9 @@
+Added Component: Designator=C_GPS(C_NANO_HOLES)
+Added Pin To Net: NetName=GND Pin=C_GPS-1
+Added Pin To Net: NetName=3.3V Pin=C_GPS-2
+Added Pin To Net: NetName=GND Pin=USB-1
+Added Pin To Net: NetName=GPS_USB_D+ Pin=USB-2
+Added Pin To Net: NetName=GPS_USB_D- Pin=USB-3
+Added Pin To Net: NetName=5V Pin=USB-4
+Added Member To Class: ClassName=schematic Member=Component C_GPS 100nF
+Added Member To Class: ClassName=schematic Member=Component USB Header 4

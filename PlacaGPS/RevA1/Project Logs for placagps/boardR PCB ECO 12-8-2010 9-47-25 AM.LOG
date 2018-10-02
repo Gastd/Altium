@@ -1,0 +1,20 @@
+Added Component: Designator=GPS_PINS(HDR2X5)
+Added Component: Designator=RESET_R(AXIAL-0.3)
+Added Component: Designator=RESET(SPST-2)
+Added Pin To Net: NetName=GPS_USB_D+ Pin=GPS_PINS-1
+Added Pin To Net: NetName=GPS_USB_D- Pin=GPS_PINS-2
+Added Pin To Net: NetName=GND Pin=GPS_PINS-3
+Added Pin To Net: NetName=GPS_RESETIN Pin=GPS_PINS-4
+Added Pin To Net: NetName=GPS_PV Pin=GPS_PINS-5
+Added Pin To Net: NetName=GPS_EVENT1 Pin=GPS_PINS-6
+Added Pin To Net: NetName=GPS_PPS Pin=GPS_PINS-7
+Added Pin To Net: NetName=GPS_EVENT2 Pin=GPS_PINS-8
+Added Pin To Net: NetName=GND Pin=GPS_PINS-9
+Added Pin To Net: NetName=GND Pin=GPS_PINS-10
+Added Pin To Net: NetName=GND Pin=RESET-1
+Added Pin To Net: NetName=GPS_RESETIN Pin=RESET-2
+Added Pin To Net: NetName=GPS_RESETIN Pin=RESET_R-1
+Added Pin To Net: NetName=3.3V Pin=RESET_R-2
+Added Member To Class: ClassName=schematic Member=Component GPS_PINS Header 5X2
+Added Member To Class: ClassName=schematic Member=Component RESET_R Res
+Added Member To Class: ClassName=schematic Member=Component RESET SW-PB

@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=5V Pin=IMU-1
+Removed Pin From Net: NetName=GND Pin=IMU-2
+Added Component: Designator=C_LNA_PWR(C_NANO_HOLES)
+Added Pin To Net: NetName=GND Pin=C_LNA_PWR-1
+Added Pin To Net: NetName=12V Pin=C_LNA_PWR-2
+Added Pin To Net: NetName=IMU_HRS_GND Pin=IMU-2
+Added Net: Name=IMU_HRS_GND
+Added Pin To Net: NetName=IMU_HRS_VCC Pin=IMU-1
+Added Net: Name=IMU_HRS_VCC
+Added Member To Class: ClassName=schematic Member=Component C_LNA_PWR 100nF

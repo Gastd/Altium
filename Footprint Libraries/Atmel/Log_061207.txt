@@ -1,0 +1,52 @@
+Altium Limited
+
+
+Atmel
+Batch Number 061207
+
+
+Publication History
+~~~~~~~~~~~~~~~~~~~
+16-Oct-2006
+13-Apr-2006
+02-Mar-2006
+06-Oct-2005
+04-Mar-2005
+26-May-2004
+19-Mar-2004
+17-Dec-2003
+17-Sep-2003
+17-Jul-2002
+15-Apr-2002
+24-Nov-2000
+
+
+Latest Modification
+~~~~~~~~~~~~~~~~~~~
+16-Oct-2006
+
+Component               IntLib Name                                                 Description
+-----------------------------------------------------------------------------------------------
+17 components           Atmel Microcontroller 32-Bit ARM                            Component Added
+4 components            Atmel Microcontroller 8-Bit AVR                             IPC-7351 Footprint Added.
+4 components            Atmel Microcontroller 8-Bit AVR                             Sch Symbol fixed.
+
+
+
+Revision History
+~~~~~~~~~~~~~~~~
+For complete revision history please see latest version of the Library Index.
+
+
+Reporting Errors
+~~~~~~~~~~~~~~~~~~
+Any errors in these libraries should be reported to the Altium Library
+Development Center so that they can be rectified immediately.
+A form has been provided for this purpose on the Library section
+of the Altium website (www.altium.com/Community/Support/Libraries/).
+
+
+Library News
+~~~~~~~~~~~~~~
+Notification of Amendments and Updates to these libraries will be sent
+via the "Library News" e-mail list.  See www.altium.com/Community/Support/Libraries/

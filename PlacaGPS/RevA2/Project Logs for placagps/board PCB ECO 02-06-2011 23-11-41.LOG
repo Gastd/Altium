@@ -1,0 +1,19 @@
+Removed Pin From Net: NetName=IMU_TX Pin=IMU_SN75176-1
+Removed Pin From Net: NetName=GND Pin=IMU_SN75176-2
+Removed Pin From Net: NetName=GND Pin=IMU_SN75176-3
+Removed Pin From Net: NetName=GND Pin=IMU_SN75176-4
+Removed Pin From Net: NetName=GND Pin=IMU_SN75176-5
+Removed Pin From Net: NetName=IMU_HRS_A Pin=IMU_SN75176-6
+Removed Pin From Net: NetName=IMU_HRS_B Pin=IMU_SN75176-7
+Removed Pin From Net: NetName=5V Pin=IMU_SN75176-8
+Removed Member From Class: ClassName=schematic Member=IMU_SN75176
+Added Component: Designator=IMU_MAX485(PA8)
+Added Pin To Net: NetName=IMU_TX Pin=IMU_MAX485-1
+Added Pin To Net: NetName=GND Pin=IMU_MAX485-2
+Added Pin To Net: NetName=GND Pin=IMU_MAX485-3
+Added Pin To Net: NetName=GND Pin=IMU_MAX485-4
+Added Pin To Net: NetName=GND Pin=IMU_MAX485-5
+Added Pin To Net: NetName=IMU_HRS_A Pin=IMU_MAX485-6
+Added Pin To Net: NetName=IMU_HRS_B Pin=IMU_MAX485-7
+Added Pin To Net: NetName=5V Pin=IMU_MAX485-8
+Added Member To Class: ClassName=schematic Member=Component IMU_MAX485 MAX485CPA

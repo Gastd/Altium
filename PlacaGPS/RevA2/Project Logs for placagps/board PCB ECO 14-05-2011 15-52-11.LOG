@@ -1,0 +1,22 @@
+Added Component: Designator=GPS(HDR2x10_2mm)
+Added Pin To Net: NetName=12V Pin=GPS-1
+Added Pin To Net: NetName=3.3V Pin=GPS-2
+Added Pin To Net: NetName=GPS_USB_D- Pin=GPS-3
+Added Pin To Net: NetName=GPS_USB_D+ Pin=GPS-4
+Added Pin To Net: NetName=GPS_RESETIN Pin=GPS-5
+Added Pin To Net: NetName=GPS_VARF Pin=GPS-6
+Added Pin To Net: NetName=GPS_EVENT2 Pin=GPS-7
+Added Pin To Net: NetName=GPS_CAN2_RX Pin=GPS-8
+Added Pin To Net: NetName=GPS_EVENT1 Pin=GPS-9
+Added Pin To Net: NetName=GND Pin=GPS-10
+Added Pin To Net: NetName=GPS_COM1_TX Pin=GPS-11
+Added Pin To Net: NetName=GPS_COM1_RX Pin=GPS-12
+Added Pin To Net: NetName=GND Pin=GPS-13
+Added Pin To Net: NetName=GPS_COM2_TX Pin=GPS-14
+Added Pin To Net: NetName=GPS_COM2_RX Pin=GPS-15
+Added Pin To Net: NetName=GND Pin=GPS-16
+Added Pin To Net: NetName=GPS_PV Pin=GPS-17
+Added Pin To Net: NetName=GND Pin=GPS-18
+Added Pin To Net: NetName=GPS_PPS Pin=GPS-19
+Added Pin To Net: NetName=GPS_CAN2_TX Pin=GPS-20
+Added Member To Class: ClassName=schematic Member=Component GPS Header 10X2

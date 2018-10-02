@@ -1,0 +1,323 @@
+*************************************************************
+FileName = boardR2.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : boardR2.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : boardR2.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : boardR2.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D11
+    D12
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : boardR2.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D11
+    D31
+    D34
+    D35
+    D36
+    D38
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : boardR2.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : boardR2.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : boardR2.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : boardR2.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : boardR2.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+    D34
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : boardR2.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : boardR2.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D57
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : boardR2.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D57
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : boardR2.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : boardR2.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : boardR2.GD1
+
+    Adding Layer      : Drill Drawing
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+
+Used DCodes :
+    D38
+    D58
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : boardR2.GG1
+
+    Adding Layer      : Drill Guide
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+
+Used DCodes :
+    D38
+*************************************************************
+

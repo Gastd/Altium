@@ -1,0 +1,8 @@
+Added Component: Designator=C_PWR2(C_NANO_HOLES)
+Added Component: Designator=C_PWR3(C_NANO_HOLES)
+Added Pin To Net: NetName=GND Pin=C_PWR2-1
+Added Pin To Net: NetName=12V Pin=C_PWR2-2
+Added Pin To Net: NetName=GND Pin=C_PWR3-1
+Added Pin To Net: NetName=12V Pin=C_PWR3-2
+Added Member To Class: ClassName=schematic Member=Component C_PWR2 Cap
+Added Member To Class: ClassName=schematic Member=Component C_PWR3 Cap

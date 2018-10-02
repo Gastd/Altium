@@ -1,0 +1,20 @@
+Removed Pin From Net: NetName=3.3V Pin=10uF-1
+Removed Pin From Net: NetName=GND Pin=10uF-2
+Removed Pin From Net: NetName=5V Pin=100nF-1
+Removed Pin From Net: NetName=GND Pin=100nF-2
+Change Component Designator: OldDesignator=10uF NewDesignator=C_PWR
+Change Component Designator: OldDesignator=100nF NewDesignator=C5_IN
+Added Component: Designator=C3.3_IN(C_NANO_HOLES)
+Added Component: Designator=C3.3_OUT(B)
+Added Component: Designator=C5_OUT(B)
+Added Pin To Net: NetName=5V Pin=C3.3_IN-1
+Added Pin To Net: NetName=GND Pin=C3.3_IN-2
+Added Pin To Net: NetName=3.3V Pin=C3.3_OUT-1
+Added Pin To Net: NetName=GND Pin=C3.3_OUT-2
+Added Pin To Net: NetName=12V Pin=C5_IN-1
+Added Pin To Net: NetName=5V Pin=C5_OUT-1
+Added Pin To Net: NetName=GND Pin=C5_OUT-2
+Added Pin To Net: NetName=12V Pin=C_PWR-1
+Added Member To Class: ClassName=schematic Member=Component C3.3_IN Cap
+Added Member To Class: ClassName=schematic Member=Component C3.3_OUT Cap Pol1
+Added Member To Class: ClassName=schematic Member=Component C5_OUT Cap Pol1

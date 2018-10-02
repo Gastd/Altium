@@ -1,0 +1,28 @@
+Bill of Material for 
+On 6/14/2011 at 9:19:13 PM
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+ 100nF               C_NANO_HOLES    13    C0, C3.3_IN, C5_IN, C_G1     Capacitor            
+                                           C_G2, C_G3, C_G4, C_G5, C_IMU
+                                           C_IMU2, C_IMU3, C_RESET, CSW
+ 10uF                B                3    C3.3_OUT, C5_OUT, C_PWR      Polarized Capacitor (Radial) 
+ 120                 AXIAL-0.3        1    RS422_R                      Resistor             
+ 180                 AXIAL-0.3        2    PV_R, PWR_R                  Resistor             
+ 1uF                 B                5    C_I1, C_I2, C_I3, C_I4, C_I5 Polarized Capacitor (Radial) 
+ 4k7                 AXIAL-0.3        1    RESET_R                      Resistor             
+ Comment             GPS_NOVATEL_OEMV1    1    GPS_NOVATEL_OEMV1                                 
+ Comment             MEMSENSE_NANO_IMU    1    MEMSENSE_NANO_IMU                                 
+ Header 10X2         HDR2x10_2mm      1    GPS                          Header, 10-Pin, Dual row 
+ Header 2            HDR1X2           4    EVENT, PWR_SW, RESET, STROBES Header, 2-Pin        
+ Header 3            HDR1X3           1    PWR                          Header, 3-Pin, Right Angle 
+ Header 4            HDR1X4           2    IMU, USB                     Header, 4-Pin        
+ L7805ACV            TO220ABN         1    L7805                        Precision 1A Regulator 
+ LD33V               T03B             1    LD33                         800mA Low-Dropout Linear Regulator 
+ MAX232ACPE          PE16A            1    IMU_MAX232                   +5V Powered, Multi-Channel RS-232 Driver/Receiver 
+ MAX3232EEPE         PE16             1    GPS_MAX3232                  ±15kV ESD-Protected, 3.0V to 5.5V, Low-Power, up to 250kbps, True RS-232 Transceiver 
+ MAX485CPA           PA8              1    MAX485                       Low-Power, Slew-Rate-Limited RS-485/RS-422 Transceiver 
+ MHDR1X3             HDR1X3           3    GPS_CH1, GPS_CH2, IMU_OUT    Header, 3-Pin        
+ PV                  HDR1X2           1    PV_LED                       Typical INFRARED GaAs LED 
+ PWR                 HDR1X2           1    PWR_LED                      Typical INFRARED GaAs LED 
+ SW-PB               PUSHBUTTON       1    RESET_SW                     Switch               

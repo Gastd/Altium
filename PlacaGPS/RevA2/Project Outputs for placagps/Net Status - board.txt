@@ -1,0 +1,49 @@
+Net Status Report
+Filename     : C:\Documents and Settings\George\My Documents\Altium\PlacaGPS\RevA2\board.PcbDoc
+Date         : 6/8/2011
+Time         : 12:11:53 AM
+Time Elapsed : 00:00:00
+
+Nets, Layer, Length
+    12V, Signal Layers Only, 2804.819mils
+    3.3V, Signal Layers Only, 3257.508mils
+    5V, Signal Layers Only, 7115.324mils
+    GND, Signal Layers Only, 0mils
+    GPS_CAN2_RX, Signal Layers Only, 0mils
+    GPS_CAN2_TX, Signal Layers Only, 0mils
+    GPS_COM1_RX, Signal Layers Only, 629.367mils
+    GPS_COM1_TX, Signal Layers Only, 894.967mils
+    GPS_COM2_RX, Signal Layers Only, 1140.722mils
+    GPS_COM2_TX, Signal Layers Only, 890.384mils
+    GPS_EVENT1, Signal Layers Only, 1026.733mils
+    GPS_EVENT2, Signal Layers Only, 932.247mils
+    GPS_PPS, Signal Layers Only, 1476.796mils
+    GPS_PV, Signal Layers Only, 1503.62mils
+    GPS_RESETIN, Signal Layers Only, 3081.063mils
+    GPS_USB_D+, Signal Layers Only, 1434.394mils
+    GPS_USB_D-, Signal Layers Only, 1710.272mils
+    GPS_VARF, Signal Layers Only, 0mils
+    IMU_HRS_A, Signal Layers Only, 683.162mils
+    IMU_HRS_B, Signal Layers Only, 775.269mils
+    IMU_TX, Signal Layers Only, 1469.533mils
+    J1_RX, Signal Layers Only, 1152.573mils
+    J1_TX, Signal Layers Only, 1039.828mils
+    J2_RX, Signal Layers Only, 1142.376mils
+    J2_TX, Signal Layers Only, 1010.955mils
+    J3_RX, Signal Layers Only, 1005.564mils
+    NetC_G1_1, Signal Layers Only, 113.284mils
+    NetC_G1_2, Signal Layers Only, 113.284mils
+    NetC_G2_1, Signal Layers Only, 147.279mils
+    NetC_G2_2, Signal Layers Only, 114.142mils
+    NetC_G4_2, Signal Layers Only, 243.948mils
+    NetC_G5_2, Signal Layers Only, 147.279mils
+    NetC_I1_1, Signal Layers Only, 199.256mils
+    NetC_I1_2, Signal Layers Only, 190.972mils
+    NetC_I2_1, Signal Layers Only, 201.682mils
+    NetC_I2_2, Signal Layers Only, 192.876mils
+    NetC_I3_1, Signal Layers Only, 472.762mils
+    NetC_I5_2, Signal Layers Only, 218.251mils
+    NetPV_LED_1, Signal Layers Only, 160mils
+    NetPWR_LED_1, Signal Layers Only, 160mils
+    PWR_SW_2, Signal Layers Only, 345.061mils
+count : 41

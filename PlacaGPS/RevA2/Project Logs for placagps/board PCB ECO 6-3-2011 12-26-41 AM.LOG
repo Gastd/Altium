@@ -1,0 +1,6 @@
+Added Component: Designator=RESET_SW(PUSHBUTTON)
+Added Pin To Net: NetName=GND Pin=RESET_SW-1
+Added Pin To Net: NetName=GND Pin=RESET_SW-1
+Added Pin To Net: NetName=GPS_RESETIN Pin=RESET_SW-2
+Added Pin To Net: NetName=GPS_RESETIN Pin=RESET_SW-2
+Added Member To Class: ClassName=schematic Member=Component RESET_SW SW-PB

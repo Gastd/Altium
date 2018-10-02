@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=5V Pin=C3.3_IN-1
+Removed Pin From Net: NetName=3.3V Pin=C3.3_OUT-1
+Removed Pin From Net: NetName=12V Pin=C5_IN-1
+Removed Pin From Net: NetName=GND Pin=C5_IN-2
+Removed Pin From Net: NetName=5V Pin=C5_OUT-1
+Removed Pin From Net: NetName=GND Pin=C5_OUT-2
+Removed Member From Class: ClassName=schematic Member=C5_IN
+Removed Member From Class: ClassName=schematic Member=C5_OUT
+Change Component Footprint: Designator=GPS Old Footprint=HDR2x10_2mm New Footprint=HDR2X10
+Change Component Designator: OldDesignator=C3.3_IN NewDesignator=100nF
+Change Component Designator: OldDesignator=C3.3_OUT NewDesignator=10uF
+Added Pin To Net: NetName=3.3V Pin=10uF-1
+Added Pin To Net: NetName=5V Pin=10uF-1
+Added Pin To Net: NetName=GND Pin=10uF-2
+Added Pin To Net: NetName=5V Pin=100nF-1
+Added Pin To Net: NetName=12V Pin=100nF-1
+Added Pin To Net: NetName=GND Pin=100nF-2

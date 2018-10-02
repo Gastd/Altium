@@ -1,0 +1,3 @@
+Change Component Designator: OldDesignator=P0 NewDesignator=POWER
+Change Component Designator: OldDesignator=U1 NewDesignator=L7805
+Change Component Designator: OldDesignator=U2 NewDesignator=LD33

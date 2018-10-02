@@ -1,0 +1,14 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [Free Documents]
+   Generated File[boardBIG.GTP]
+   Generated File[boardBIG.GBP]
+   Generated File[boardBIG.RUL]
+   Generated File[boardBIG.EXTREP]
+   Generated File[boardBIG.REP]
+
+
+Files Generated   : 5
+Documents Printed : 0
+
+Finished Output Generation At 12:06:25 PM On 7/15/2011

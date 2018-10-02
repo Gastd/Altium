@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=GPS_USB_D- Pin=GPS_PINS-1
+Removed Pin From Net: NetName=GPS_RESETIN Pin=GPS_PINS-4
+Added Pin To Net: NetName=GPS_RESETIN Pin=GPS_PINS-1
+Added Pin To Net: NetName=GPS_USB_D- Pin=GPS_PINS-4

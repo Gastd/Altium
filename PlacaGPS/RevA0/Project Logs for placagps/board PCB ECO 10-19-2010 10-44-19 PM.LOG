@@ -1,0 +1,14 @@
+Added Component: Designator=J0(KLD-0202)
+Added Pin To Net: NetName=NetJ0_1 Pin=J0-1
+Added Pin To Net: NetName=NetJ0_1 Pin=J0-1A
+Added Pin To Net: NetName=NetJ0_1 Pin=J0-1B
+Added Net: Name=NetJ0_1
+Added Pin To Net: NetName=NetJ0_2 Pin=J0-2
+Added Pin To Net: NetName=NetJ0_2 Pin=J0-2A
+Added Pin To Net: NetName=NetJ0_2 Pin=J0-2B
+Added Net: Name=NetJ0_2
+Added Pin To Net: NetName=NetJ0_3 Pin=J0-3
+Added Pin To Net: NetName=NetJ0_3 Pin=J0-3A
+Added Pin To Net: NetName=NetJ0_3 Pin=J0-3B
+Added Net: Name=NetJ0_3
+Added Member To Class: ClassName=schematic Member=Component J0 PWR2.5

@@ -1,0 +1,7 @@
+Change Component Footprint: Designator=J0 Old Footprint=KLD-0202 New Footprint=DC_POWER
+Change Component Comment : Designator=J0 Old Comment=PWR2.5 New Comment=DC_POWER
+Added Pin To Net: NetName=GND Pin=J0-2
+Added Pin To Net: NetName=GND Pin=J0-3
+Added Pin To Net: NetName=NetD1_1 Pin=D1-1
+Added Pin To Net: NetName=NetD1_1 Pin=J0-1
+Added Net: Name=NetD1_1

@@ -1,0 +1,10 @@
+Change Component Footprint: Designator=GPS Old Footprint=HDR2x10_2mm New Footprint=HDR2X10
+Added Component: Designator=C_PWR(B)
+Added Pin To Net: NetName=12V Pin=C_PWR-1
+Added Pin To Net: NetName=GND Pin=C_PWR-2
+Added Pin To Net: NetName=12V Pin=GPS-1
+Added Member To Class: ClassName=schematic Member=Component C3.3_IN Cap
+Added Member To Class: ClassName=schematic Member=Component C3.3_OUT Cap Pol1
+Added Member To Class: ClassName=schematic Member=Component C5_IN Cap
+Added Member To Class: ClassName=schematic Member=Component C5_OUT Cap Pol1
+Added Member To Class: ClassName=schematic Member=Component C_PWR Cap Pol1

@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=J2_TX Pin=GPS_MAX3232-7
+Removed Pin From Net: NetName=J2_RX Pin=GPS_MAX3232-8
+Removed Pin From Net: NetName=J1_RX Pin=GPS_MAX3232-13
+Removed Pin From Net: NetName=J1_TX Pin=GPS_MAX3232-14
+Added Component: Designator=GPS_PINS(HDR2X4)
+Added Pin To Net: NetName=J2_RX Pin=GPS_MAX3232-7
+Added Pin To Net: NetName=J2_TX Pin=GPS_MAX3232-8
+Added Pin To Net: NetName=J1_TX Pin=GPS_MAX3232-13
+Added Pin To Net: NetName=J1_RX Pin=GPS_MAX3232-14
+Added Pin To Net: NetName=GPS_USB_D+ Pin=GPS_PINS-1
+Added Pin To Net: NetName=GPS_PV Pin=GPS_PINS-2
+Added Pin To Net: NetName=GPS_USB_D- Pin=GPS_PINS-3
+Added Pin To Net: NetName=GPS_PPS Pin=GPS_PINS-4
+Added Pin To Net: NetName=GPS_EVENT1 Pin=GPS_PINS-5
+Added Pin To Net: NetName=GPS_RESETIN Pin=GPS_PINS-6
+Added Pin To Net: NetName=GPS_EVENT2 Pin=GPS_PINS-7
+Added Pin To Net: NetName=GND Pin=GPS_PINS-8
+Added Member To Class: ClassName=schematic Member=Component GPS_PINS Header 4X2

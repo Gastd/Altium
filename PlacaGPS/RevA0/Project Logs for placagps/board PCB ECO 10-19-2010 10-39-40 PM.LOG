@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=J1_TX Pin=J1-2
+Removed Pin From Net: NetName=J1_RX Pin=J1-3
+Removed Pin From Net: NetName=GND Pin=J1-5
+Removed Member From Class: ClassName=schematic Member=J1
+Change Component Designator: OldDesignator=P1 NewDesignator=P0
+Added Component: Designator=P1(MHDR1X3)
+Added Pin To Net: NetName=J1_TX Pin=P1-1
+Added Pin To Net: NetName=J1_RX Pin=P1-2
+Added Pin To Net: NetName=GND Pin=P1-3
+Added Member To Class: ClassName=schematic Member=Component P1 MHDR1X3

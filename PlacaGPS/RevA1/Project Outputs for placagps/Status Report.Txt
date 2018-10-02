@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [placagps.PrjPcb]
+   Generated File[boardR2.TXT]
+   Generated File[boardR2.DRL]
+   Generated File[boardR2.LDP]
+   Generated File[boardR2.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 7:10:27 PM On 12/21/2010

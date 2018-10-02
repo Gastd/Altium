@@ -1,0 +1,24 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: boardBIG.PcbDoc   7/13/2011  9:49:32 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : boardBIG.TXT
+EIA File   : boardBIG.DRL
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        20mil (0.508mm)          Round          4                0.67 Inch (17.00 mm)
+T2        28mil (0.7112mm)         Round          24               6.03 Inch (153.24 mm)
+T3        30mil (0.762mm)          Round          20               10.92 Inch (277.38 mm)
+T4        33mil (0.8382mm)         Round          38               11.68 Inch (296.73 mm)
+T5        35mil (0.889mm)          Round          75               16.22 Inch (412.10 mm)
+T6        39mil (0.9906mm)         Round          3                0.20 Inch (5.08 mm)
+T7        43mil (1.0922mm)         Round          3                0.20 Inch (5.08 mm)
+T8        70mil (1.778mm)          Round          4                2.62 Inch (66.45 mm)
+T9        100mil (2.54mm)          Round          4                11.10 Inch (281.84 mm)
+T10       125mil (3.175mm)         Round          4                5.59 Inch (141.87 mm)
+---------------------------------------------------------------------------
+Totals                                            179              65.23 Inch (1656.77 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

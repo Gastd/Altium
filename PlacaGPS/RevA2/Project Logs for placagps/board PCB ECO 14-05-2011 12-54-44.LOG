@@ -1,0 +1,235 @@
+Added Component: Designator=C0(C_NANO_HOLES)
+Added Component: Designator=C3.3_IN(C_NANO_HOLES)
+Added Component: Designator=C3.3_OUT(B)
+Added Component: Designator=C5_IN(C_NANO_HOLES)
+Added Component: Designator=C5_OUT(B)
+Added Component: Designator=C_G1(C_NANO_HOLES)
+Added Component: Designator=C_G2(C_NANO_HOLES)
+Added Component: Designator=C_G3(C_NANO_HOLES)
+Added Component: Designator=C_G4(C_NANO_HOLES)
+Added Component: Designator=C_G5(C_NANO_HOLES)
+Added Component: Designator=C_GPS(C_NANO_HOLES)
+Added Component: Designator=C_I1(B)
+Added Component: Designator=C_I2(B)
+Added Component: Designator=C_I3(B)
+Added Component: Designator=C_I4(B)
+Added Component: Designator=C_I5(B)
+Added Component: Designator=C_IMU2(C_NANO_HOLES)
+Added Component: Designator=C_IMU3(C_NANO_HOLES)
+Added Component: Designator=C_IMU(C_NANO_HOLES)
+Added Component: Designator=C_PWR2(C_NANO_HOLES)
+Added Component: Designator=C_PWR3(C_NANO_HOLES)
+Added Component: Designator=C_PWR(B)
+Added Component: Designator=GPS_CH1(HDR1X3)
+Added Component: Designator=GPS_CH2(HDR1X3)
+Added Component: Designator=GPS_MAX3232(PE16)
+Added Component: Designator=GPS_PINS(HDR2X5)
+Added Component: Designator=GPS(HDR2X10)
+Added Component: Designator=IMU_MAX232(PE16A)
+Added Component: Designator=IMU_OUT(HDR1X3)
+Added Component: Designator=IMU_SN75176(P008)
+Added Component: Designator=IMU(HDR1X4)
+Added Component: Designator=L7805(TO220ABN)
+Added Component: Designator=LD33(T03B)
+Added Component: Designator=PV_LED(B)
+Added Component: Designator=PV_R(AXIAL-0.3)
+Added Component: Designator=PWR_LED(B)
+Added Component: Designator=PWR_R(AXIAL-0.3)
+Added Component: Designator=PWR_SW(HDR1X2H)
+Added Component: Designator=PWR(HDR1X3H)
+Added Component: Designator=RESET_R(AXIAL-0.3)
+Added Component: Designator=RESET_SW(PUSHBUTTON)
+Added Component: Designator=RESET(HDR1X2H)
+Added Component: Designator=RS422_R(AXIAL-0.3)
+Added Pin To Net: NetName=3.3V Pin=C3.3_OUT-1
+Added Pin To Net: NetName=3.3V Pin=C_GPS-2
+Added Pin To Net: NetName=3.3V Pin=GPS-2
+Added Pin To Net: NetName=3.3V Pin=LD33-2
+Added Pin To Net: NetName=3.3V Pin=PWR_R-2
+Added Pin To Net: NetName=3.3V Pin=RESET_R-2
+Added Net: Name=3.3V
+Added Pin To Net: NetName=5V Pin=C0-2
+Added Pin To Net: NetName=5V Pin=C3.3_IN-1
+Added Pin To Net: NetName=5V Pin=C5_OUT-1
+Added Pin To Net: NetName=5V Pin=C_G3-2
+Added Pin To Net: NetName=5V Pin=C_I4-1
+Added Pin To Net: NetName=5V Pin=C_IMU2-2
+Added Pin To Net: NetName=5V Pin=C_IMU3-2
+Added Pin To Net: NetName=5V Pin=C_IMU-2
+Added Pin To Net: NetName=5V Pin=GPS_MAX3232-16
+Added Pin To Net: NetName=5V Pin=IMU-1
+Added Pin To Net: NetName=5V Pin=IMU_MAX232-16
+Added Pin To Net: NetName=5V Pin=IMU_SN75176-8
+Added Pin To Net: NetName=5V Pin=L7805-2
+Added Pin To Net: NetName=5V Pin=LD33-3
+Added Net: Name=5V
+Added Pin To Net: NetName=12V Pin=C5_IN-1
+Added Pin To Net: NetName=12V Pin=C_PWR2-2
+Added Pin To Net: NetName=12V Pin=C_PWR3-2
+Added Pin To Net: NetName=12V Pin=C_PWR-1
+Added Pin To Net: NetName=12V Pin=GPS-1
+Added Pin To Net: NetName=12V Pin=L7805-1
+Added Pin To Net: NetName=12V Pin=PWR-1
+Added Pin To Net: NetName=12V Pin=PWR-3
+Added Net: Name=12V
+Added Pin To Net: NetName=GND Pin=C0-1
+Added Pin To Net: NetName=GND Pin=C3.3_IN-2
+Added Pin To Net: NetName=GND Pin=C3.3_OUT-2
+Added Pin To Net: NetName=GND Pin=C5_IN-2
+Added Pin To Net: NetName=GND Pin=C5_OUT-2
+Added Pin To Net: NetName=GND Pin=C_G3-1
+Added Pin To Net: NetName=GND Pin=C_G4-1
+Added Pin To Net: NetName=GND Pin=C_G5-1
+Added Pin To Net: NetName=GND Pin=C_GPS-1
+Added Pin To Net: NetName=GND Pin=C_I3-2
+Added Pin To Net: NetName=GND Pin=C_I4-2
+Added Pin To Net: NetName=GND Pin=C_I5-1
+Added Pin To Net: NetName=GND Pin=C_IMU2-1
+Added Pin To Net: NetName=GND Pin=C_IMU3-1
+Added Pin To Net: NetName=GND Pin=C_IMU-1
+Added Pin To Net: NetName=GND Pin=C_PWR2-1
+Added Pin To Net: NetName=GND Pin=C_PWR3-1
+Added Pin To Net: NetName=GND Pin=C_PWR-2
+Added Pin To Net: NetName=GND Pin=GPS-10
+Added Pin To Net: NetName=GND Pin=GPS-13
+Added Pin To Net: NetName=GND Pin=GPS-16
+Added Pin To Net: NetName=GND Pin=GPS-18
+Added Pin To Net: NetName=GND Pin=GPS_CH1-3
+Added Pin To Net: NetName=GND Pin=GPS_CH2-3
+Added Pin To Net: NetName=GND Pin=GPS_MAX3232-15
+Added Pin To Net: NetName=GND Pin=GPS_PINS-3
+Added Pin To Net: NetName=GND Pin=GPS_PINS-9
+Added Pin To Net: NetName=GND Pin=GPS_PINS-10
+Added Pin To Net: NetName=GND Pin=IMU-2
+Added Pin To Net: NetName=GND Pin=IMU_MAX232-15
+Added Pin To Net: NetName=GND Pin=IMU_OUT-3
+Added Pin To Net: NetName=GND Pin=IMU_SN75176-2
+Added Pin To Net: NetName=GND Pin=IMU_SN75176-3
+Added Pin To Net: NetName=GND Pin=IMU_SN75176-4
+Added Pin To Net: NetName=GND Pin=IMU_SN75176-5
+Added Pin To Net: NetName=GND Pin=L7805-3
+Added Pin To Net: NetName=GND Pin=LD33-1
+Added Pin To Net: NetName=GND Pin=PV_LED-2
+Added Pin To Net: NetName=GND Pin=PWR-2
+Added Pin To Net: NetName=GND Pin=PWR_LED-2
+Added Pin To Net: NetName=GND Pin=RESET_SW-1
+Added Pin To Net: NetName=GND Pin=RESET_SW-1
+Added Net: Name=GND
+Added Pin To Net: NetName=GPS_CAN2_RX Pin=GPS-8
+Added Net: Name=GPS_CAN2_RX
+Added Pin To Net: NetName=GPS_CAN2_TX Pin=GPS-20
+Added Net: Name=GPS_CAN2_TX
+Added Pin To Net: NetName=GPS_COM1_RX Pin=GPS-12
+Added Pin To Net: NetName=GPS_COM1_RX Pin=GPS_MAX3232-12
+Added Net: Name=GPS_COM1_RX
+Added Pin To Net: NetName=GPS_COM1_TX Pin=GPS-11
+Added Pin To Net: NetName=GPS_COM1_TX Pin=GPS_MAX3232-11
+Added Net: Name=GPS_COM1_TX
+Added Pin To Net: NetName=GPS_COM2_RX Pin=GPS-15
+Added Pin To Net: NetName=GPS_COM2_RX Pin=GPS_MAX3232-9
+Added Net: Name=GPS_COM2_RX
+Added Pin To Net: NetName=GPS_COM2_TX Pin=GPS-14
+Added Pin To Net: NetName=GPS_COM2_TX Pin=GPS_MAX3232-10
+Added Net: Name=GPS_COM2_TX
+Added Pin To Net: NetName=GPS_EVENT1 Pin=GPS-9
+Added Pin To Net: NetName=GPS_EVENT1 Pin=GPS_PINS-8
+Added Net: Name=GPS_EVENT1
+Added Pin To Net: NetName=GPS_EVENT2 Pin=GPS-7
+Added Pin To Net: NetName=GPS_EVENT2 Pin=GPS_PINS-6
+Added Net: Name=GPS_EVENT2
+Added Pin To Net: NetName=GPS_PPS Pin=GPS-19
+Added Pin To Net: NetName=GPS_PPS Pin=GPS_PINS-7
+Added Net: Name=GPS_PPS
+Added Pin To Net: NetName=GPS_PV Pin=GPS-17
+Added Pin To Net: NetName=GPS_PV Pin=GPS_PINS-5
+Added Pin To Net: NetName=GPS_PV Pin=PV_R-2
+Added Net: Name=GPS_PV
+Added Pin To Net: NetName=GPS_RESETIN Pin=GPS-5
+Added Pin To Net: NetName=GPS_RESETIN Pin=GPS_PINS-1
+Added Pin To Net: NetName=GPS_RESETIN Pin=RESET-1
+Added Pin To Net: NetName=GPS_RESETIN Pin=RESET_R-1
+Added Pin To Net: NetName=GPS_RESETIN Pin=RESET_SW-2
+Added Pin To Net: NetName=GPS_RESETIN Pin=RESET_SW-2
+Added Net: Name=GPS_RESETIN
+Added Pin To Net: NetName=GPS_USB_D+ Pin=GPS-4
+Added Pin To Net: NetName=GPS_USB_D+ Pin=GPS_PINS-2
+Added Net: Name=GPS_USB_D+
+Added Pin To Net: NetName=GPS_USB_D- Pin=GPS-3
+Added Pin To Net: NetName=GPS_USB_D- Pin=GPS_PINS-4
+Added Net: Name=GPS_USB_D-
+Added Pin To Net: NetName=GPS_VARF Pin=GPS-6
+Added Net: Name=GPS_VARF
+Added Pin To Net: NetName=IMU_HRS_A Pin=IMU-3
+Added Pin To Net: NetName=IMU_HRS_A Pin=IMU_SN75176-6
+Added Pin To Net: NetName=IMU_HRS_A Pin=RS422_R-1
+Added Net: Name=IMU_HRS_A
+Added Pin To Net: NetName=IMU_HRS_B Pin=IMU-4
+Added Pin To Net: NetName=IMU_HRS_B Pin=IMU_SN75176-7
+Added Pin To Net: NetName=IMU_HRS_B Pin=RS422_R-2
+Added Net: Name=IMU_HRS_B
+Added Pin To Net: NetName=IMU_TX Pin=IMU_MAX232-11
+Added Pin To Net: NetName=IMU_TX Pin=IMU_SN75176-1
+Added Net: Name=IMU_TX
+Added Pin To Net: NetName=J1_RX Pin=GPS_CH1-2
+Added Pin To Net: NetName=J1_RX Pin=GPS_MAX3232-14
+Added Net: Name=J1_RX
+Added Pin To Net: NetName=J1_TX Pin=GPS_CH1-1
+Added Pin To Net: NetName=J1_TX Pin=GPS_MAX3232-13
+Added Net: Name=J1_TX
+Added Pin To Net: NetName=J2_RX Pin=GPS_CH2-2
+Added Pin To Net: NetName=J2_RX Pin=GPS_MAX3232-7
+Added Net: Name=J2_RX
+Added Pin To Net: NetName=J2_TX Pin=GPS_CH2-1
+Added Pin To Net: NetName=J2_TX Pin=GPS_MAX3232-8
+Added Net: Name=J2_TX
+Added Pin To Net: NetName=J3_RX Pin=IMU_MAX232-14
+Added Pin To Net: NetName=J3_RX Pin=IMU_OUT-2
+Added Net: Name=J3_RX
+Added Pin To Net: NetName=NetC_G1_1 Pin=C_G1-1
+Added Pin To Net: NetName=NetC_G1_1 Pin=GPS_MAX3232-3
+Added Net: Name=NetC_G1_1
+Added Pin To Net: NetName=NetC_G1_2 Pin=C_G1-2
+Added Pin To Net: NetName=NetC_G1_2 Pin=GPS_MAX3232-1
+Added Net: Name=NetC_G1_2
+Added Pin To Net: NetName=NetC_G2_1 Pin=C_G2-1
+Added Pin To Net: NetName=NetC_G2_1 Pin=GPS_MAX3232-5
+Added Net: Name=NetC_G2_1
+Added Pin To Net: NetName=NetC_G2_2 Pin=C_G2-2
+Added Pin To Net: NetName=NetC_G2_2 Pin=GPS_MAX3232-4
+Added Net: Name=NetC_G2_2
+Added Pin To Net: NetName=NetC_G4_2 Pin=C_G4-2
+Added Pin To Net: NetName=NetC_G4_2 Pin=GPS_MAX3232-2
+Added Net: Name=NetC_G4_2
+Added Pin To Net: NetName=NetC_G5_2 Pin=C_G5-2
+Added Pin To Net: NetName=NetC_G5_2 Pin=GPS_MAX3232-6
+Added Net: Name=NetC_G5_2
+Added Pin To Net: NetName=NetC_I1_1 Pin=C_I1-1
+Added Pin To Net: NetName=NetC_I1_1 Pin=IMU_MAX232-1
+Added Net: Name=NetC_I1_1
+Added Pin To Net: NetName=NetC_I1_2 Pin=C_I1-2
+Added Pin To Net: NetName=NetC_I1_2 Pin=IMU_MAX232-3
+Added Net: Name=NetC_I1_2
+Added Pin To Net: NetName=NetC_I2_1 Pin=C_I2-1
+Added Pin To Net: NetName=NetC_I2_1 Pin=IMU_MAX232-4
+Added Net: Name=NetC_I2_1
+Added Pin To Net: NetName=NetC_I2_2 Pin=C_I2-2
+Added Pin To Net: NetName=NetC_I2_2 Pin=IMU_MAX232-5
+Added Net: Name=NetC_I2_2
+Added Pin To Net: NetName=NetC_I3_1 Pin=C_I3-1
+Added Pin To Net: NetName=NetC_I3_1 Pin=IMU_MAX232-2
+Added Net: Name=NetC_I3_1
+Added Pin To Net: NetName=NetC_I5_2 Pin=C_I5-2
+Added Pin To Net: NetName=NetC_I5_2 Pin=IMU_MAX232-6
+Added Net: Name=NetC_I5_2
+Added Pin To Net: NetName=NetPV_LED_1 Pin=PV_LED-1
+Added Pin To Net: NetName=NetPV_LED_1 Pin=PV_R-1
+Added Net: Name=NetPV_LED_1
+Added Pin To Net: NetName=NetPWR_LED_1 Pin=PWR_LED-1
+Added Pin To Net: NetName=NetPWR_LED_1 Pin=PWR_R-1
+Added Net: Name=NetPWR_LED_1
+Added Pin To Net: NetName=PWR_SW_1 Pin=PWR_SW-2
+Added Net: Name=PWR_SW_1
+Added Pin To Net: NetName=PWR_SW_2 Pin=PWR_SW-1
+Added Net: Name=PWR_SW_2
+Added Class: Name=schematic
+Added Room: Name=schematic

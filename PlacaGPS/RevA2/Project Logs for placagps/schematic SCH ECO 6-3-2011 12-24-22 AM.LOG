@@ -1,0 +1,20 @@
+Change Component Comment: Designator=C0 Old Comment=Cap New Comment=100nF
+Change Component Comment: Designator=C3.3_IN Old Comment=Cap New Comment=100nF
+Change Component Comment: Designator=C5_IN Old Comment=Cap New Comment=100nF
+Change Component Comment: Designator=C_IMU2 Old Comment=Cap New Comment=100nF
+Change Component Comment: Designator=C_IMU3 Old Comment=Cap New Comment=100nF
+Change Component Comment: Designator=C_IMU Old Comment=Cap New Comment=100nF
+Change Component Comment: Designator=C3.3_OUT Old Comment=Cap Pol1 New Comment=10uF
+Change Component Comment: Designator=C5_OUT Old Comment=Cap Pol1 New Comment=10uF
+Change Component Comment: Designator=C_PWR Old Comment=Cap Pol1 New Comment=10uF
+Change Component Comment: Designator=C_I1 Old Comment=Cap Pol New Comment=1uF
+Change Component Comment: Designator=C_I2 Old Comment=Cap Pol New Comment=1uF
+Change Component Comment: Designator=C_I3 Old Comment=Cap Pol New Comment=1uF
+Change Component Comment: Designator=C_I4 Old Comment=Cap Pol New Comment=1uF
+Change Component Comment: Designator=C_I5 Old Comment=Cap Pol New Comment=1uF
+Change Component Comment: Designator=PV_LED Old Comment=LED New Comment=PV
+Change Component Comment: Designator=PWR_LED Old Comment=LED New Comment=PWR
+Change Component Comment: Designator=RESET_R Old Comment=Res New Comment=4k7
+Change Component Comment: Designator=RS422_R Old Comment=Res New Comment=120
+Change Component Comment: Designator=PV_R Old Comment=Res New Comment=180
+Change Component Comment: Designator=PWR_R Old Comment=Res New Comment=180

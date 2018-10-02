@@ -1,0 +1,4 @@
+Added Component: Designator=CSW(C_NANO_HOLES)
+Added Pin To Net: NetName=PWR_SW_2 Pin=CSW-1
+Added Pin To Net: NetName=GND Pin=CSW-2
+Added Member To Class: ClassName=schematic Member=Component CSW 100nF

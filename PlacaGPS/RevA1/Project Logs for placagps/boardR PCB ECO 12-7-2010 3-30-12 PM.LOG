@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=GPS_PV Pin=GPS_PINS-2
+Removed Pin From Net: NetName=GPS_PPS Pin=GPS_PINS-4
+Removed Pin From Net: NetName=GPS_RESETIN Pin=GPS_PINS-6
+Removed Pin From Net: NetName=GND Pin=GPS_PINS-8
+Added Pin To Net: NetName=GPS_RESETIN Pin=GPS_PINS-2
+Added Pin To Net: NetName=GND Pin=GPS_PINS-4
+Added Pin To Net: NetName=GPS_PPS Pin=GPS_PINS-6
+Added Pin To Net: NetName=GPS_PV Pin=GPS_PINS-8
+Added Member To Class: ClassName=schematic Member=Component C_I1 Cap Pol

@@ -1,0 +1,3 @@
+Removed Pin From Net: NetName=GND Pin=PWR-2
+Added Pin To Net: NetName=PWR_SW_2 Pin=PWR-2
+Added Pin To Net: NetName=GND Pin=PWR_SW-2

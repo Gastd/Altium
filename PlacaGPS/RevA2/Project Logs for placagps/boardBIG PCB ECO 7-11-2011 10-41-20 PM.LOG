@@ -1,0 +1,20 @@
+Added Pin To Net: NetName=5V Pin=C3.3_IN-1
+Added Pin To Net: NetName=GND Pin=C3.3_IN-2
+Added Pin To Net: NetName=3.3V Pin=C3.3_OUT-1
+Added Pin To Net: NetName=GND Pin=C3.3_OUT-2
+Added Pin To Net: NetName=12V Pin=C5_IN-1
+Added Pin To Net: NetName=GND Pin=C5_IN-2
+Added Pin To Net: NetName=5V Pin=C5_OUT-1
+Added Pin To Net: NetName=GND Pin=C5_OUT-2
+Added Pin To Net: NetName=12V Pin=L7805-1
+Added Pin To Net: NetName=5V Pin=L7805-2
+Added Pin To Net: NetName=GND Pin=L7805-3
+Added Pin To Net: NetName=GND Pin=LD33-1
+Added Pin To Net: NetName=3.3V Pin=LD33-2
+Added Pin To Net: NetName=5V Pin=LD33-3
+Added Member To Class: ClassName=schematic Member=Component C3.3_IN 100nF
+Added Member To Class: ClassName=schematic Member=Component C3.3_OUT 10uF
+Added Member To Class: ClassName=schematic Member=Component C5_IN 100nF
+Added Member To Class: ClassName=schematic Member=Component C5_OUT 10uF
+Added Member To Class: ClassName=schematic Member=Component L7805 L7805ACV
+Added Member To Class: ClassName=schematic Member=Component LD33 LD33V

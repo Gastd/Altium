@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=GPS_COM1_TX Pin=GPS-11
+Removed Pin From Net: NetName=GPS_COM1_RX Pin=GPS-12
+Removed Pin From Net: NetName=GPS_COM2_TX Pin=GPS-14
+Removed Pin From Net: NetName=GPS_COM2_RX Pin=GPS-15
+Added Pin To Net: NetName=GPS_COM2_TX Pin=GPS-11
+Added Pin To Net: NetName=GPS_COM2_RX Pin=GPS-12
+Added Pin To Net: NetName=GPS_COM1_TX Pin=GPS-14
+Added Pin To Net: NetName=GPS_COM1_RX Pin=GPS-15
