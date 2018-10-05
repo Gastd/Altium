@@ -1,0 +1,196 @@
+P-CAD Schematic ASCII File Export Log :
+   Current document: C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA2\teste.sch
+   BeginLog
+      Information : 
+      Information :   Start exporting symbols
+      Information :    Exporting symbol definition(s) for component [DC_POWER]
+      Warning :     Symbol name [DC_POWER], mode [Normal], part [1] changed to [DC_POWER_1_N]
+      Information : Start exporting the symbol definitions for power ports
+      Warning :     End exporting the symbol defintions for power ports
+      Information :   End exporting symbols
+      Information : 
+      Information : 
+      Information :   Start exporting components
+      Information :    Exporting component [DC_POWER]
+      Information : Start exporting component definitions for power ports
+      Warning :     End exporting component definitions for powerports
+      Information :   End exporting components
+      Information : 
+   EndLog
+   Imported succesfully!
+ 
+      Information : Start export of netlist
+      Information : Start export of component instances
+      Information : End export of component instances
+      Information : Start export of nets
+      Information : End export of nets
+      Information : End export of netlist
+      Information : Start exporting the objects for sheet [schematic]
+      Information : Start WIRES export
+      Information : End WIRES export
+      Information : Start BUSES export
+      Information : End BUSES export
+      Information : Start PORTS export
+      Information : End PORTS export
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     Exporting powerport at [3400mil : 8900mil] as component with designator [GND1]
+      Warning :     Exporting powerport at [4800mil : 9600mil] as component with designator [P5V1]
+      Warning :     Exporting powerport at [7100mil : 9600mil] as component with designator [P3_3V1]
+      Warning :     Exporting powerport at [3400mil : 9600mil] as component with designator [P12V1]
+      Warning :     Exporting powerport at [8000mil : 8800mil] as component with designator [GND2]
+      Warning :     Exporting powerport at [8000mil : 9700mil] as component with designator [P3_3V2]
+      Warning :     Exporting powerport at [8500mil : 7200mil] as component with designator [GND3]
+      Warning :     Exporting powerport at [8000mil : 6000mil] as component with designator [GND4]
+      Warning :     Exporting powerport at [9000mil : 7300mil] as component with designator [GND5]
+      Warning :     Exporting powerport at [6700mil : 6300mil] as component with designator [GND6]
+      Warning :     Exporting powerport at [7900mil : 7100mil] as component with designator [PJ1_RX1]
+      Warning :     Exporting powerport at [7900mil : 6900mil] as component with designator [PJ2_RX1]
+      Warning :     Exporting powerport at [7900mil : 6700mil] as component with designator [PJ1_TX1]
+      Warning :     Exporting powerport at [7900mil : 6500mil] as component with designator [PJ2_TX1]
+      Warning :     Exporting powerport at [8500mil : 4700mil] as component with designator [GND7]
+      Warning :     Exporting powerport at [8500mil : 3800mil] as component with designator [GND8]
+      Warning :     Exporting powerport at [6800mil : 4100mil] as component with designator [GND9]
+      Warning :     Exporting powerport at [6800mil : 4700mil] as component with designator [PIMU_TX1]
+      Warning :     Exporting powerport at [7900mil : 4700mil] as component with designator [PJ3_RX1]
+      Warning :     Exporting powerport at [4800mil : 4300mil] as component with designator [GND10]
+      Warning :     Exporting powerport at [2600mil : 4800mil] as component with designator [PIMU_HRS_A1]
+      Warning :     Exporting powerport at [3300mil : 4800mil] as component with designator [PIMU_HRS_B1]
+      Warning :     Exporting powerport at [4500mil : 4400mil] as component with designator [PIMU_TX2]
+      Warning :     Exporting powerport at [8800mil : 5100mil] as component with designator [P5V2]
+      Warning :     Exporting powerport at [9000mil : 7600mil] as component with designator [P3_3V3]
+      Warning :     Exporting powerport at [2600mil : 4200mil] as component with designator [P5V3]
+      Warning :     Exporting powerport at [2600mil : 3800mil] as component with designator [GND11]
+      Warning :     Exporting powerport at [5000mil : 4800mil] as component with designator [GND12]
+      Warning :     Exporting powerport at [10000mil : 7500mil] as component with designator [GND13]
+      Warning :     Exporting powerport at [10000mil : 6100mil] as component with designator [GND14]
+      Warning :     Exporting powerport at [10000mil : 4700mil] as component with designator [GND15]
+      Warning :     Exporting powerport at [10000mil : 7600mil] as component with designator [PJ1_RX2]
+      Warning :     Exporting powerport at [10000mil : 6200mil] as component with designator [PJ2_RX2]
+      Warning :     Exporting powerport at [10000mil : 7700mil] as component with designator [PJ1_TX2]
+      Warning :     Exporting powerport at [10000mil : 6300mil] as component with designator [PJ2_TX2]
+      Warning :     Exporting powerport at [10000mil : 4800mil] as component with designator [PJ3_RX2]
+      Warning :     Exporting powerport at [3600mil : 6400mil] as component with designator [PGPS_PPS1]
+      Warning :     Exporting powerport at [3600mil : 6500mil] as component with designator [PGPS_PV1]
+      Warning :     Exporting powerport at [4400mil : 6800mil] as component with designator [PGPS_COM2_RX1]
+      Warning :     Exporting powerport at [3600mil : 6700mil] as component with designator [GPS_GND1]
+      Warning :     Exporting powerport at [4400mil : 6700mil] as component with designator [PGPS_COM1_TX1]
+      Warning :     Exporting powerport at [3600mil : 6900mil] as component with designator [PGPS_Event11]
+      Warning :     Exporting powerport at [3600mil : 7000mil] as component with designator [PGPS_Event21]
+      Warning :     Exporting powerport at [3600mil : 7100mil] as component with designator [PGPS_RESETIN1]
+      Warning :     Exporting powerport at [3600mil : 7200mil] as component with designator [PGPS_USB_D_1]
+      Warning :     Exporting powerport at [3600mil : 7300mil] as component with designator [PGPS_LNA_PWR1]
+      Warning :     Exporting powerport at [4400mil : 7300mil] as component with designator [PGPS_VIN1]
+      Warning :     Exporting powerport at [4400mil : 7200mil] as component with designator [PGPS_USB_D_2]
+      Warning :     Exporting powerport at [4400mil : 7100mil] as component with designator [PGPS_VARF1]
+      Warning :     Exporting powerport at [4400mil : 7000mil] as component with designator [PGPS_CAN2_RX1]
+      Warning :     Exporting powerport at [4400mil : 6900mil] as component with designator [GPS_GND2]
+      Warning :     Exporting powerport at [3600mil : 6600mil] as component with designator [PGPS_COM1_RX1]
+      Warning :     Exporting powerport at [3600mil : 6800mil] as component with designator [PGPS_COM2_TX1]
+      Warning :     Exporting powerport at [4400mil : 6600mil] as component with designator [GPS_GND3]
+      Warning :     Exporting powerport at [4400mil : 6500mil] as component with designator [GPS_GND4]
+      Warning :     Exporting powerport at [4400mil : 6400mil] as component with designator [PGPS_CAN2_TX1]
+      Warning :     Exporting powerport at [6800mil : 7100mil] as component with designator [PGPS_COM1_TX2]
+      Warning :     Exporting powerport at [6800mil : 6700mil] as component with designator [PGPS_COM1_RX2]
+      Warning :     Exporting powerport at [6800mil : 6900mil] as component with designator [PGPS_COM2_TX2]
+      Warning :     Exporting powerport at [6800mil : 6500mil] as component with designator [PGPS_COM2_RX2]
+      Warning :     Exporting powerport at [3700mil : 5900mil] as component with designator [PIMU_HRS_VCC1]
+      Warning :     Exporting powerport at [3700mil : 5800mil] as component with designator [IMU_HRS_GND1]
+      Warning :     Exporting powerport at [3700mil : 5700mil] as component with designator [PIMU_HRS_A2]
+      Warning :     Exporting powerport at [3700mil : 5600mil] as component with designator [PIMU_HRS_B2]
+      Warning :     Exporting powerport at [1700mil : 5700mil] as component with designator [PIMU_HRS_VCC2]
+      Warning :     Exporting powerport at [2400mil : 5700mil] as component with designator [P6V1]
+      Warning :     Exporting powerport at [1700mil : 5400mil] as component with designator [IMU_HRS_GND2]
+      Warning :     Exporting powerport at [2400mil : 5400mil] as component with designator [GND16]
+      Warning :     Exporting powerport at [2400mil : 6600mil] as component with designator [GND17]
+      Warning :     Exporting powerport at [2400mil : 6900mil] as component with designator [P3_3V4]
+      Warning :     Exporting powerport at [1700mil : 6600mil] as component with designator [GPS_GND5]
+      Warning :     Exporting powerport at [1700mil : 6900mil] as component with designator [PGPS_VIN2]
+      Warning :     Exporting powerport at [8900mil : 8800mil] as component with designator [GND18]
+      Warning :     Exporting powerport at [8900mil : 9700mil] as component with designator [PGPS_PV2]
+      Warning :     Exporting powerport at [1300mil : 9600mil] as component with designator [P12V2]
+      Warning :     Exporting powerport at [1300mil : 8900mil] as component with designator [GND19]
+      Warning :     Exporting powerport at [12100mil : 7600mil] as component with designator [PGPS_USB_D_3]
+      Warning :     Exporting powerport at [12100mil : 7500mil] as component with designator [PGPS_USB_D_4]
+      Warning :     Exporting powerport at [12100mil : 6800mil] as component with designator [PGPS_Event12]
+      Warning :     Exporting powerport at [12100mil : 6700mil] as component with designator [PGPS_Event22]
+      Warning :     Exporting powerport at [12100mil : 6200mil] as component with designator [PGPS_PV3]
+      Warning :     Exporting powerport at [12100mil : 6100mil] as component with designator [PGPS_PPS2]
+      Warning :     Exporting powerport at [1700mil : 7600mil] as component with designator [PGPS_LNA_PWR2]
+      Warning :     Exporting powerport at [2400mil : 7600mil] as component with designator [P12V3]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     Exporting powerport at [1700mil : 8400mil] as component with designator [PPWR_SW_21]
+      Warning :     Exporting powerport at [1700mil : 8100mil] as component with designator [PPWR_SW_11]
+      Warning :     Exporting powerport at [2100mil : 8800mil] as component with designator [PPWR_SW_22]
+      Warning :     Exporting powerport at [1300mil : 9600mil] as component with designator [PPWR_SW_12]
+      Warning :     Exporting powerport at [12100mil : 7400mil] as component with designator [P5V4]
+      Warning :     Exporting powerport at [12100mil : 7700mil] as component with designator [GND20]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     Exporting powerport at [10000mil : 9600mil] as component with designator [PGPS_RESETIN2]
+      Warning :     Exporting powerport at [10000mil : 10000mil] as component with designator [P3_3V5]
+      Warning :     Exporting powerport at [10000mil : 8900mil] as component with designator [GND21]
+      Warning :     Exporting powerport at [12100mil : 5600mil] as component with designator [PGPS_VARF2]
+      Warning :     Exporting powerport at [12100mil : 5500mil] as component with designator [PGPS_CAN2_RX2]
+      Warning :     Exporting powerport at [12100mil : 5400mil] as component with designator [PGPS_CAN2_TX2]
+      Warning :     Exporting powerport at [1700mil : 7300mil] as component with designator [GND22]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     Exporting powerport at [4800mil : 8300mil] as component with designator [P6V2]
+      Warning :     Exporting powerport at [3400mil : 8300mil] as component with designator [P12V4]
+      Warning :     Exporting powerport at [3400mil : 7800mil] as component with designator [GND23]
+      Warning :     Exporting powerport at [12200mil : 4000mil] as component with designator [P6V3]
+      Warning :     Exporting powerport at [11000mil : 3600mil] as component with designator [PJ1_RX3]
+      Warning :     Exporting powerport at [11000mil : 3500mil] as component with designator [PJ1_TX3]
+      Warning :     Exporting powerport at [12200mil : 3900mil] as component with designator [GND24]
+      Warning :     Exporting powerport at [11000mil : 3700mil] as component with designator [GND25]
+      Warning :     Exporting powerport at [11000mil : 3400mil] as component with designator [PJ2_RX3]
+      Warning :     Exporting powerport at [11000mil : 3300mil] as component with designator [PJ2_TX3]
+      Warning :     Exporting powerport at [11000mil : 3200mil] as component with designator [PJ3_RX3]
+      Warning :     Exporting powerport at [8200mil : 3150mil] as component with designator [P5V5]
+      Warning :     Exporting powerport at [8200mil : 3050mil] as component with designator [GND26]
+      Warning :     Exporting powerport at [8200mil : 2850mil] as component with designator [PSDA_MPU60501]
+      Warning :     Exporting powerport at [8200mil : 2950mil] as component with designator [PSCL_MPU60501]
+      Warning :     Exporting powerport at [12200mil : 3400mil] as component with designator [PSCL_MPU60502]
+      Warning :     Exporting powerport at [12200mil : 3300mil] as component with designator [PSDA_MPU60502]
+      Information : End exporting the objects for sheet [schematic]
+      Information : Start exporting the objects for sheet [Nano]
+      Information : Start WIRES export
+      Information : End WIRES export
+      Information : Start BUSES export
+      Information : End BUSES export
+      Information : Start PORTS export
+      Information : End PORTS export
+      Warning :     Rectangle [-300mil : -800mil]-[300mil : 800mil] exported as lines.
+      Information : End exporting the objects for sheet [Nano]
+      Information : Start exporting the objects for sheet [IMU_MPU6050]
+      Information : Start WIRES export
+      Information : End WIRES export
+      Information : Start BUSES export
+      Information : End BUSES export
+      Information : Start PORTS export
+      Information : End PORTS export
+      Warning :     Rectangle [-300mil : -200mil]-[300mil : 400mil] exported as lines.
+      Information : End exporting the objects for sheet [IMU_MPU6050]
+EndLog

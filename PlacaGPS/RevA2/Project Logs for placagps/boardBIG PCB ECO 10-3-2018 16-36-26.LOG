@@ -1,0 +1,11 @@
+Added Component: Designator=Nano(ArduinoNano)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=Nano-4
+Added Pin To Net: NetName=J1_RX Pin=Nano-5
+Added Pin To Net: NetName=J1_TX Pin=Nano-6
+Added Pin To Net: NetName=J2_RX Pin=Nano-7
+Added Pin To Net: NetName=J2_TX Pin=Nano-8
+Added Pin To Net: NetName=J3_RX Pin=Nano-9
+Added Pin To Net: NetName=GND Pin=Nano-29
+Added Pin To Net: NetName=6V Pin=Nano-30
+Added Member To Class: ClassName=schematic Member=Component Nano Arduino Nano

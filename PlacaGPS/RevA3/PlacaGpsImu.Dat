@@ -1,0 +1,21 @@
+﻿Field=#~Integer~#~50|Field=Comment~String~Comment~125|Field=Description~String~Description~167|Field=Designator~String~Designator~115|Field=Footprint~String~Footprint~115|Field=LibRef~String~LibRef~115|Field=Quantity~Integer~Quantity~113|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~PlacaGpsImu.PrjPcb|ReportField=ProjectFullPath~C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\PlacaGpsImu.PrjPcb|ReportField=Title~Bill of Materials For Project [PlacaGpsImu.PrjPcb] (No PCB Document Selected)|ReportField=TotalQuantity~48|ReportField=ReportTime~17:32:32|ReportField=ReportDate~10/4/2018|ReportField=ReportDateTime~10/4/2018 17:32:32|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~10/4/2018|ReportField=CurrentTime~17:07:15|ReportField=Date~|ReportField=DocumentFullPathAndName~C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\Sheet1.SchDoc|ReportField=DocumentName~Sheet1.SchDoc|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~10/4/2018|ReportField=Organization~|ReportField=ProjectName~PlacaGpsImu.PrjPcb|ReportField=Revision~|ReportField=Rule~|ReportField=SheetNumber~|ReportField=SheetTotal~|ReportField=Time~|ReportField=Title~|ReportField=DataSourceFileName~PlacaGpsImu.PrjPcb|ReportField=DataSourceFullPath~C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\PlacaGpsImu.PrjPcb|ReportField=PCBConfigurationName~Sources|ReportField=Item~|ReportField=ItemRevision~|ReportField=ItemAndRevision~|ReportField=ItemRevisionBase~|ReportField=ItemRevisionLevel1~|ReportField=ItemRevisionLevel2~|ReportField=ItemRevisionLevel1AndBase~|ReportField=ItemRevisionLevel2AndLevel1~
+1|100nF|Capacitor|C0, C5_IN, C6_IN, C33_IN, C_G1, C_G2, C_G3, C_G4, C_G5, C_GPS, C_IMU1, C_IMU2, C_IMU3, C_LNA_PWR, C_RESET, CSW|C_NANO_HOLES|Cap|16
+2|10uF|Polarized Capacitor (Radial)|C5_OUT, C6_OUT, C33_OUT, C_PWR|B|Cap Pol1|4
+3|1uF|Polarized Capacitor (Radial)|C_I1, C_I2, C_I3, C_I4, C_I5|B|Cap Pol1|5
+4|Header 10X2|Header, 10-Pin, Dual row|GPS|HDR2x10_2mm|Header 10X2|1
+5|Header 2|Header, 2-Pin, Header, 2-Pin, Header, 2-Pin, Right Angle, Header, 2-Pin, Right Angle|GPS_EVENT, GPS_STROBES, PWR_SW, RESET|HDR1X2|Header 2, Header 2, Header 2H, Header 2H|4
+6|Header 3|Header, 3-Pin, Header, 3-Pin, Right Angle|GPS_EXTRA, PWR|HDR1X3|Header 3, Header 3H|2
+7|MAX3232EEPE|±15kV ESD-Protected, 3.0V to 5.5V, Low-Power, up to 250kbps, True RS-232 Transceiver|GPS_MAX3232|PE16|MAX3232EEPE|1
+8|Header 4|Header, 4-Pin|GPS_USB, NANO_IMU|HDR1X4|Header 4|2
+9|MAX232ACPE|+5V Powered, Multi-Channel RS-232 Driver/Receiver|IMU_MAX232|PE16A|MAX232ACPE|1
+10|MPU6050||IMU_MPU6050|MPU6050|Component_1|1
+11|L7805ACV|Precision 1A Regulator|L7805|TO220ABN|L7805ACV|1
+12|L7806CV|Positive Voltage Regulator|L7806|TO220ABN|L7806CV|1
+13|LD33V|800mA Low-Dropout Linear Regulator|LD33|T03B|LM1117T-3.3|1
+14|MAX485CPA|Low-Power, Slew-Rate-Limited RS-485/RS-422 Transceiver|MAX485|PA8|MAX485CPA|1
+15|PV|Typical INFRARED GaAs LED|PV_LED|HDR1X2|LED0|1
+16|180|Resistor|PV_R, PWR_R|AXIAL-0.3|Res1|2
+17|PWR|Typical INFRARED GaAs LED|PWR_LED|HDR1X2|LED0|1
+18|4k7|Resistor|RESET_R|AXIAL-0.3|Res1|1
+19|SW-PB|Switch|RESET_SW|PUSHBUTTON|SW-PB|1
+20|120|Resistor|RS422_R|AXIAL-0.3|Res1|1

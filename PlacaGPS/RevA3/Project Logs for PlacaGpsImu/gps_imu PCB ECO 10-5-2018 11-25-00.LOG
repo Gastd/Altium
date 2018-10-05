@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=C_I1 Old Footprint=RB5-10.5 New Footprint=RB7.6-15
+Added Component: Designator=STM32F103C8(STM32F103C8)
+Add component. Clean all parameters for all variants
+Added Member To Class: ClassName=Sheet1 Member=Component STM32F103C8 STM32F103C8 Blue Pill

@@ -1,0 +1,7 @@
+[1004/174858:ERROR:tcp_socket_win.cc(335)] bind() returned an error: Normalmente é permitida apenas uma utilização de cada endereço de soquete (protocolo/endereço de rede/porta). (0x2740)
+[1004/174858:ERROR:devtools_http_handler.cc(229)] Cannot start http server for devtools. Stop devtools.
+[1004/181651:ERROR:webgraphicscontext3d_command_buffer_impl.cc(199)] CommandBufferProxy::Initialize failed.
+[1004/181651:ERROR:webgraphicscontext3d_command_buffer_impl.cc(218)] Failed to initialize command buffer.
+[1004/181652:ERROR:ipc_channel_win.cc(217)] pipe error: 109
+[1004/181652:ERROR:gpu_channel_host.cc(228)] Failed to send GpuChannelMsg_CreateCommandBuffer.
+[1004/181652:ERROR:webgraphicscontext3d_command_buffer_impl.cc(218)] Failed to initialize command buffer.

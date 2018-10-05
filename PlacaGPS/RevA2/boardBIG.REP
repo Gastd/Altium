@@ -1,31 +1,75 @@
-*************************************************************
-FileName = boardBIG.GBR
-AutoAperture = True
-*************************************************************
-Generating : Top Paste
-      File : boardBIG.GTP
-
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Bottom Paste
-      File : boardBIG.GBP
-
-    Adding Layer      : Bottom Paste
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-*************************************************************
-
+Export log for : boardBIG.Rep
+AddingPadStyle (Default)
+AddingPadStyle P:EX60Y60D301
+AddingPadStyle P:EX250Y250D1001
+AddingPadStyle P:SX67Y67D431
+AddingPadStyle P:EX67Y67D431
+AddingPadStyle P:EX55Y55D331
+AddingPadStyle P:EX49Y49D301
+AddingPadStyle P:SX49Y49D301
+AddingPadStyle P:EX63Y63D391
+AddingPadStyle P:SX63Y63D391
+AddingPadStyle P:EX59Y59D351
+AddingPadStyle P:SX59Y59D351
+AddingPadStyle P:SX59Y59D352
+AddingPadStyle P:EX59Y59D352
+AddingPadStyle P:EX46Y46D281
+AddingPadStyle P:SX46Y46D281
+AddingPadStyle P:EX24Y39D201
+AddingPadStyle P:SX63Y79D391
+AddingPadStyle P:EX63Y79D391
+Adding ViaStyle (Default)
+Adding ViaStyle V:EX50Y50D281
+Adding TextStyle (Default)
+Adding TextStyle T:H40W10
+Adding TextStyle T:H60W10
+Adding TextStyle T:H59W6
+Adding TextStyle T:H55W8
+Adding TextStyle T:H50W8
+Adding TextStyle T:H30W10
+Adding TextStyle T:H30W8
+Adding TextStyle T:H55W10
+Adding TextStyle T:H50W10
+Adding PatternDef TO220ABN_1
+Adding PatternDef C_NANO_HOLES_1
+Adding PatternDef B_1
+Adding PatternDef B_2
+Adding PatternDef TO220ABN_2
+Adding PatternDef T03B_1
+Adding PatternDef PE16A_1
+Adding PatternDef PE16_1
+Adding PatternDef PA8_1
+Adding PatternDef HDR1X2_1
+Adding PatternDef B_3
+Adding PatternDef HDR2x10_2mm_1
+Adding PatternDef HDR1X3_1
+Adding PatternDef HDR1X4_1
+Adding PatternDef AXIAL-0.3_1
+Adding PatternDef B_4
+Adding PatternDef PUSHBUTTON_1
+Adding PatternDef ArduinoNano_1
+Adding PatternDef MPU6050_1
+Adding CompDef TO220ABN_1
+Adding CompDef C_NANO_HOLES_1
+Adding CompDef B_1
+Adding CompDef B_2
+Adding CompDef TO220ABN_2
+Adding CompDef T03B_1
+Adding CompDef PE16A_1
+Adding CompDef PE16_1
+Adding CompDef PA8_1
+Adding CompDef HDR1X2_1
+Adding CompDef B_3
+Adding CompDef HDR2x10_2mm_1
+Adding CompDef HDR1X3_1
+Adding CompDef HDR1X4_1
+Adding CompDef AXIAL-0.3_1
+Adding CompDef B_4
+Adding CompDef PUSHBUTTON_1
+Adding CompDef ArduinoNano_1
+Adding CompDef MPU6050_1
+      Warning: Polygon has been imported as unpoured.  It will need to be repoured in PCAD
+      Warning: Polygon has been imported as unpoured.  It will need to be repoured in PCAD
+      Warning: Unexpected Free Track Object Found On Layer BottomOverlay.   This may cause problems in PCAD PCB
+ 
+EndLog

@@ -1,0 +1,3 @@
+Added Pin To Net: NetName=6V Pin=C6_OUT-1
+Added Pin To Net: NetName=GND Pin=C6_OUT-2
+Added Member To Class: ClassName=schematic Member=Component C6_OUT 10uF
