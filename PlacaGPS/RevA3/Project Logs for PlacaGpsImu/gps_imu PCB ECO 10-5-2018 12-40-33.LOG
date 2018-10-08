@@ -1,0 +1,3 @@
+Change Component Designator: OldDesignator=100nF NewDesignator=C5_OUT
+Change Component Designator: OldDesignator=100nF NewDesignator=C33_OUT
+Added Member To Class: ClassName=Sheet1 Member=Component C5_OUT 10uF

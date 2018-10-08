@@ -1,0 +1,6 @@
+Change Component Footprint: Designator=GPS Old Footprint=GPS_BOARD New Footprint=HDR2x10_2mm
+Change Component Designator: OldDesignator=100nF NewDesignator=C_LNA_PWR
+Added Pin To Net: NetName=GND Pin=C6_IN-2
+Added Pin To Net: NetName=GND Pin=C6_OUT-2
+Added Pin To Net: NetName=GND Pin=L7806-3
+Added Member To Class: ClassName=Sheet1 Member=Component GPS Header 10X2
