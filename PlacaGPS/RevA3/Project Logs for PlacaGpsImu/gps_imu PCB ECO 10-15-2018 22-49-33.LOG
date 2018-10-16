@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=IMU_TX Pin=STM32F103C8-15
+Added Pin To Net: NetName=IMU_TX Pin=STM32F103C8-14
