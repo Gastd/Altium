@@ -1,0 +1,788 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD17\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10/17/2018</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">18:36:21</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:04</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc" class="file"><acronym title="C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc">C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">144</td></tr>
+</table>
+</td>
+</table><a name="IDNFG3QRSFPXYJCJWQLRLRH3TUJEPFY0DSPSD04OL33L5UQHRPZUCG"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDN0LSTTSALLZCGNWDY1XHSIIB1B43CKNN1AJUWFELOURSD5J3CJTD">Clearance Constraint (Gap=0.75mm) (All),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTUN0CHXB2OPMMPMKASTCGVGMWKCWPWLTNIFUIGHQBWRJQZNQQXCC">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOI0F4K5N34QYUOQ2IP4JO5J2BKKA3MN1YSY5QILMEDIXAUPV2XI">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSQRJJMHX1SXYPX3MQBRVVEMXQGFS0U1UIEVU5BOJEF4OT32C2PLB">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVU1MBB0VJEJVDJV3LPSFCHGUYLQBRU0FERLZ2AOVDHYKLWPD3VAL">Width Constraint (Min=0.5mm) (Max=0.5mm) (Preferred=0.5mm) (All)</a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5W2ML4NXGVXBOYXKD322AL0L04J1UMXPEH5ZFMCBZQ5GBUR1WXH">Width Constraint (Min=1mm) (Max=1mm) (Preferred=1mm) ((InNet('3.3V') OR InNet('12V') OR InNet('6V') OR InNet('5V') OR InNet('GND') OR InNet('PWR_SW_2')))</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFSUKGZOCVNGDIXRAA2QWM1IXROHQIZOXOAH1DFCINOIECPTHJEBP">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDL0RICR1QIVFFMB4HDJOWCRFJKLYSWKVPZRUSSCGRHSZQ4ORWEGMO">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTOYCK0CWB4X0JQLBYR4F4SRNKK35EON3FSBDUADB1OT0IQZLW4IF">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDT5K1P2AQHO0CB0MJOXAMFS4Y1MWKD0K401LX3MJ2ZFPMIMUK4MFD">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPL1XJZ1KD34PFC02PHMXS2GV2HLZC0PRLWHSRCH2SKKDLQ1J1Y3G">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">108</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDN34J3SNYYY2JDWPEHAGAAVBYWJAGVCJAP4PKKCLCDMVATVED0SXL">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">16</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJ30XZVRSY0U2MEFQUXL4FAY4EHQB021WNUXCTWOMPPBQHHWVYOO">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3EIPCWKTSCIUNS5LL33XBIQKCK3FJVBSWMJLLRJI5EWWIU340WGN">Room Sheet1 (Bounding Region = (184.4mm, 39.146mm, 628.399mm, 120.146mm) (InComponentClass('Sheet1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDE2CWGVAKRWHOIZKVY3HJS1XAJIIG52NFFHGJUQCFNZTESPKCCXKE">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">144</td>
+</tr>
+</table><br><a name="IDN0LSTTSALLZCGNWDY1XHSIIB1B43CKNN1AJUWFELOURSD5J3CJTD"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.75mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4497.73mil|Location2.X=4535.906mil|Location1.Y=3516.217mil|Location2.Y=3555.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4497.73mil|Location2.X=4535.906mil|Location1.Y=3516.217mil|Location2.Y=3555.744mil|Absolute=True">Clearance Constraint: (0.518mm &lt; 0.75mm) Between Track (88.75mm,63mm)(94.25mm,68.5mm) on Bottom Layer And Pad LD33-1(88.25mm,65.54mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDVU1MBB0VJEJVDJV3LPSFCHGUYLQBRU0FERLZ2AOVDHYKLWPD3VAL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Width Constraint (Min=0.5mm) (Max=0.5mm) (Preferred=0.5mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2141.488mil|Location2.X=2159.396mil|Location1.Y=4285.669mil|Location2.Y=4298.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2141.488mil|Location2.X=2159.396mil|Location1.Y=4285.669mil|Location2.Y=4298.512mil|Absolute=True">Width Constraint: Track (29.104mm,83.926mm)(29.21mm,83.82mm) on Top Layer Actual Width = 0.25mm, Target Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1647.924mil|Location2.X=1665.831mil|Location1.Y=1840.137mil|Location2.Y=1852.979mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1647.924mil|Location2.X=1665.831mil|Location1.Y=1840.137mil|Location2.Y=1852.979mil|Absolute=True">Width Constraint: Track (16.51mm,21.867mm)(16.731mm,21.646mm) on Top Layer Actual Width = 0.25mm, Target Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1747.924mil|Location2.X=1765.831mil|Location1.Y=1840.137mil|Location2.Y=1852.979mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1747.924mil|Location2.X=1765.831mil|Location1.Y=1840.137mil|Location2.Y=1852.979mil|Absolute=True">Width Constraint: Track (19.05mm,21.867mm)(19.271mm,21.646mm) on Top Layer Actual Width = 0.25mm, Target Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3492.27mil|Location2.X=3505.67mil|Location1.Y=3962.7mil|Location2.Y=3977.111mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3492.27mil|Location2.X=3505.67mil|Location1.Y=3962.7mil|Location2.Y=3977.111mil|Absolute=True">Width Constraint: Track (63.476mm,75.634mm)(63.476mm,75.706mm) on Top Layer Actual Width = 0.25mm, Target Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3413.53mil|Location2.X=3426.93mil|Location1.Y=4044.268mil|Location2.Y=4058.679mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3413.53mil|Location2.X=3426.93mil|Location1.Y=4044.268mil|Location2.Y=4058.679mil|Absolute=True">Width Constraint: Track (61.476mm,77.706mm)(61.476mm,77.777mm) on Top Layer Actual Width = 0.25mm, Target Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4035.705mil|Location2.X=4053.515mil|Location1.Y=4368.618mil|Location2.Y=4381.461mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4035.705mil|Location2.X=4053.515mil|Location1.Y=4368.618mil|Location2.Y=4381.461mil|Absolute=True">Width Constraint: Track (77.25mm,85.96mm)(77.29mm,86mm) on Top Layer Actual Width = 0.25mm, Target Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3098.57mil|Location2.X=3111.97mil|Location1.Y=3962.7mil|Location2.Y=3977.111mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3098.57mil|Location2.X=3111.97mil|Location1.Y=3962.7mil|Location2.Y=3977.111mil|Absolute=True">Width Constraint: Track (53.476mm,75.634mm)(53.476mm,75.706mm) on Bottom Layer Actual Width = 0.25mm, Target Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1907.115mil|Location2.X=1925.023mil|Location1.Y=4285.669mil|Location2.Y=4298.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1907.115mil|Location2.X=1925.023mil|Location1.Y=4285.669mil|Location2.Y=4298.512mil|Absolute=True">Width Constraint: Track (23.151mm,83.926mm)(23.257mm,83.82mm) on Bottom Layer Actual Width = 0.25mm, Target Width = 0.5mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID5W2ML4NXGVXBOYXKD322AL0L04J1UMXPEH5ZFMCBZQ5GBUR1WXH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Width Constraint (Min=1mm) (Max=1mm) (Preferred=1mm) ((InNet('3.3V') OR InNet('12V') OR InNet('6V') OR InNet('5V') OR InNet('GND') OR InNet('PWR_SW_2')))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4467.988mil|Location2.X=4500.211mil|Location1.Y=3458.973mil|Location2.Y=3481.658mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4467.988mil|Location2.X=4500.211mil|Location1.Y=3458.973mil|Location2.Y=3481.658mil|Absolute=True">Width Constraint: Track (88.25mm,63mm)(88.5mm,63mm) on Top Layer Actual Width = 0.5mm, Target Width = 1mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2119.956mil|Location2.X=2149.006mil|Location1.Y=1571.768mil|Location2.Y=1594.453mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2119.956mil|Location2.X=2149.006mil|Location1.Y=1571.768mil|Location2.Y=1594.453mil|Absolute=True">Width Constraint: Track (28.72mm,15.05mm)(28.75mm,15.08mm) on Top Layer Actual Width = 0.5mm, Target Width = 1mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2118.382mil|Location2.X=2147.431mil|Location1.Y=1570.193mil|Location2.Y=1592.878mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2118.382mil|Location2.X=2147.431mil|Location1.Y=1570.193mil|Location2.Y=1592.878mil|Absolute=True">Width Constraint: Track (28.67mm,15mm)(28.72mm,15.05mm) on Top Layer Actual Width = 0.5mm, Target Width = 1mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4189.642mil|Location2.X=4218.922mil|Location1.Y=4039.484mil|Location2.Y=4062.169mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4189.642mil|Location2.X=4218.922mil|Location1.Y=4039.484mil|Location2.Y=4062.169mil|Absolute=True">Width Constraint: Track (81.25mm,77.8mm)(81.36mm,77.69mm) on Top Layer Actual Width = 0.5mm, Target Width = 1mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4472.909mil|Location2.X=4505.132mil|Location1.Y=3458.973mil|Location2.Y=3481.658mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4472.909mil|Location2.X=4505.132mil|Location1.Y=3458.973mil|Location2.Y=3481.658mil|Absolute=True">Width Constraint: Track (88.25mm,63mm)(88.75mm,63mm) on Bottom Layer Actual Width = 0.5mm, Target Width = 1mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDL0RICR1QIVFFMB4HDJOWCRFJKLYSWKVPZRUSSCGRHSZQ4ORWEGMO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1233.656mil|Location2.X=1345.142mil|Location1.Y=2258.911mil|Location2.Y=2370.397mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1233.656mil|Location2.X=1345.142mil|Location1.Y=2258.911mil|Location2.Y=2370.397mil|Absolute=True">Hole Size Constraint: (2.8mm &gt; 2.54mm) Pad IMU_MPU6050-10(7.351mm,33.646mm) on Multi-Layer Actual Hole Size = 2.8mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1843.892mil|Location2.X=1955.378mil|Location1.Y=2258.911mil|Location2.Y=2370.397mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1843.892mil|Location2.X=1955.378mil|Location1.Y=2258.911mil|Location2.Y=2370.397mil|Absolute=True">Hole Size Constraint: (2.8mm &gt; 2.54mm) Pad IMU_MPU6050-9(22.851mm,33.646mm) on Multi-Layer Actual Hole Size = 2.8mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3841.993mil|Location2.X=3968.243mil|Location1.Y=3643.41mil|Location2.Y=3769.66mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3841.993mil|Location2.X=3968.243mil|Location1.Y=3643.41mil|Location2.Y=3769.66mil|Absolute=True">Hole Size Constraint: (3.175mm &gt; 2.54mm) Pad GPS-21(73.79mm,69mm) on Multi-Layer Actual Hole Size = 3.175mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2491.993mil|Location2.X=2618.243mil|Location1.Y=3643.41mil|Location2.Y=3769.66mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2491.993mil|Location2.X=2618.243mil|Location1.Y=3643.41mil|Location2.Y=3769.66mil|Absolute=True">Hole Size Constraint: (3.175mm &gt; 2.54mm) Pad GPS-22(39.5mm,69mm) on Multi-Layer Actual Hole Size = 3.175mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2491.993mil|Location2.X=2618.243mil|Location1.Y=1093.41mil|Location2.Y=1219.66mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2491.993mil|Location2.X=2618.243mil|Location1.Y=1093.41mil|Location2.Y=1219.66mil|Absolute=True">Hole Size Constraint: (3.175mm &gt; 2.54mm) Pad GPS-23(39.5mm,4.23mm) on Multi-Layer Actual Hole Size = 3.175mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3841.993mil|Location2.X=3968.243mil|Location1.Y=1093.41mil|Location2.Y=1219.66mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3841.993mil|Location2.X=3968.243mil|Location1.Y=1093.41mil|Location2.Y=1219.66mil|Absolute=True">Hole Size Constraint: (3.175mm &gt; 2.54mm) Pad GPS-24(73.79mm,4.23mm) on Multi-Layer Actual Hole Size = 3.175mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDPL1XJZ1KD34PFC02PHMXS2GV2HLZC0PRLWHSRCH2SKKDLQ1J1Y3G"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4386.521mil|Location2.X=4394.188mil|Location1.Y=1901.52mil|Location2.Y=1909.187mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4386.521mil|Location2.X=4394.188mil|Location1.Y=1901.52mil|Location2.Y=1909.187mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (88.655mm,23.25mm) on Top Overlay And Pad C6_IN-1(86.75mm,23.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.521mil|Location2.X=4594.188mil|Location1.Y=1901.521mil|Location2.Y=1909.188mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.521mil|Location2.X=4594.188mil|Location1.Y=1901.521mil|Location2.Y=1909.188mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (88.655mm,23.25mm) on Top Overlay And Pad C6_IN-2(90.56mm,23.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4888.489mil|Location2.X=4896.156mil|Location1.Y=2019.63mil|Location2.Y=2027.297mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4888.489mil|Location2.X=4896.156mil|Location1.Y=2019.63mil|Location2.Y=2027.297mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (101.405mm,26.25mm) on Top Overlay And Pad C_PWR-2(99.5mm,26.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5088.489mil|Location2.X=5096.156mil|Location1.Y=2019.631mil|Location2.Y=2027.298mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5088.489mil|Location2.X=5096.156mil|Location1.Y=2019.631mil|Location2.Y=2027.298mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (101.405mm,26.25mm) on Top Overlay And Pad C_PWR-1(103.31mm,26.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4386.521mil|Location2.X=4394.188mil|Location1.Y=2797.189mil|Location2.Y=2804.856mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4386.521mil|Location2.X=4394.188mil|Location1.Y=2797.189mil|Location2.Y=2804.856mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (88.655mm,46mm) on Top Overlay And Pad C5_IN-2(86.75mm,46mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.521mil|Location2.X=4594.188mil|Location1.Y=2797.19mil|Location2.Y=2804.857mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.521mil|Location2.X=4594.188mil|Location1.Y=2797.19mil|Location2.Y=2804.857mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (88.655mm,46mm) on Top Overlay And Pad C5_IN-1(90.56mm,46mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4396.364mil|Location2.X=4404.03mil|Location1.Y=3062.937mil|Location2.Y=3070.604mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4396.364mil|Location2.X=4404.03mil|Location1.Y=3062.937mil|Location2.Y=3070.604mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (88.905mm,52.75mm) on Top Overlay And Pad C33_IN-1(87mm,52.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.364mil|Location2.X=4604.03mil|Location1.Y=3062.938mil|Location2.Y=3070.605mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.364mil|Location2.X=4604.03mil|Location1.Y=3062.938mil|Location2.Y=3070.605mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (88.905mm,52.75mm) on Top Overlay And Pad C33_IN-2(90.81mm,52.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=2885.373mil|Location2.Y=2896.623mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=2885.373mil|Location2.Y=2896.623mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (30mm,45.778mm)(30mm,48.064mm) on Top Overlay And Pad C_STM32-1(30mm,49.08mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=2885.373mil|Location2.Y=2896.623mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=2885.373mil|Location2.Y=2896.623mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (29.365mm,48.064mm)(30.635mm,48.064mm) on Top Overlay And Pad C_STM32-1(30mm,49.08mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=2747.944mil|Location2.Y=2759.194mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=2747.944mil|Location2.Y=2759.194mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (30mm,45.016mm)(30.635mm,45.016mm) on Top Overlay And Pad C_STM32-2(30mm,44mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=2747.944mil|Location2.Y=2759.194mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=2747.944mil|Location2.Y=2759.194mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (30mm,45.016mm)(30mm,47.302mm) on Top Overlay And Pad C_STM32-2(30mm,44mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=2747.944mil|Location2.Y=2759.194mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=2747.944mil|Location2.Y=2759.194mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (29.365mm,45.016mm)(30mm,45.016mm) on Top Overlay And Pad C_STM32-2(30mm,44mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4387.131mil|Location2.X=4394.798mil|Location1.Y=1901.521mil|Location2.Y=1909.188mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4387.131mil|Location2.X=4394.798mil|Location1.Y=1901.521mil|Location2.Y=1909.188mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (84.988mm,23.25mm)(86.004mm,23.25mm) on Top Overlay And Pad C6_IN-1(86.75mm,23.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4193.194mil|Location2.X=4204.444mil|Location1.Y=4078.653mil|Location2.Y=4089.903mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4193.194mil|Location2.X=4204.444mil|Location1.Y=4078.653mil|Location2.Y=4089.903mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (81.25mm,78.816mm)(81.885mm,78.816mm) on Top Overlay And Pad C_GPS-2(81.25mm,77.8mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4193.194mil|Location2.X=4204.444mil|Location1.Y=4078.653mil|Location2.Y=4089.903mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4193.194mil|Location2.X=4204.444mil|Location1.Y=4078.653mil|Location2.Y=4089.903mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (80.615mm,78.816mm)(81.25mm,78.816mm) on Top Overlay And Pad C_GPS-2(81.25mm,77.8mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4193.194mil|Location2.X=4204.444mil|Location1.Y=4078.653mil|Location2.Y=4089.903mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4193.194mil|Location2.X=4204.444mil|Location1.Y=4078.653mil|Location2.Y=4089.903mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (81.25mm,78.816mm)(81.25mm,81.102mm) on Top Overlay And Pad C_GPS-2(81.25mm,77.8mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4193.194mil|Location2.X=4204.444mil|Location1.Y=4216.081mil|Location2.Y=4227.331mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4193.194mil|Location2.X=4204.444mil|Location1.Y=4216.081mil|Location2.Y=4227.331mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (80.615mm,81.864mm)(81.885mm,81.864mm) on Top Overlay And Pad C_GPS-1(81.25mm,82.88mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4193.194mil|Location2.X=4204.444mil|Location1.Y=4216.081mil|Location2.Y=4227.331mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4193.194mil|Location2.X=4204.444mil|Location1.Y=4216.081mil|Location2.Y=4227.331mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (81.25mm,79.578mm)(81.25mm,81.864mm) on Top Overlay And Pad C_GPS-1(81.25mm,82.88mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1722.564mil|Location2.Y=1733.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1722.564mil|Location2.Y=1733.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (18.686mm,18.115mm)(18.686mm,19.385mm) on Top Overlay And Pad C_MPU-1(17.67mm,18.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1722.564mil|Location2.Y=1733.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1722.564mil|Location2.Y=1733.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (18.686mm,18.75mm)(20.972mm,18.75mm) on Top Overlay And Pad C_MPU-1(17.67mm,18.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1722.564mil|Location2.Y=1733.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1722.564mil|Location2.Y=1733.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (21.734mm,18.115mm)(21.734mm,18.75mm) on Top Overlay And Pad C_MPU-2(22.75mm,18.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1722.564mil|Location2.Y=1733.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1722.564mil|Location2.Y=1733.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (21.734mm,18.75mm)(21.734mm,19.385mm) on Top Overlay And Pad C_MPU-2(22.75mm,18.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1722.564mil|Location2.Y=1733.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1722.564mil|Location2.Y=1733.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (19.448mm,18.75mm)(21.734mm,18.75mm) on Top Overlay And Pad C_MPU-2(22.75mm,18.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2060.426mil|Location2.X=2071.676mil|Location1.Y=3784.375mil|Location2.Y=3795.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2060.426mil|Location2.X=2071.676mil|Location1.Y=3784.375mil|Location2.Y=3795.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Track (26.851mm,43.286mm)(26.851mm,96.286mm) on Top Overlay And Pad Free-21(27.94mm,71.12mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1723.701mil|Location2.X=1731.368mil|Location1.Y=2516.264mil|Location2.Y=2523.93mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1723.701mil|Location2.X=1731.368mil|Location1.Y=2516.264mil|Location2.Y=2523.93mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Text "IMU_MPU6050" (4.975mm,37.302mm) on Top Overlay And Pad Free-16(19.05mm,39.37mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.638mil|Location2.X=1649.305mil|Location1.Y=2508.544mil|Location2.Y=2516.211mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.638mil|Location2.X=1649.305mil|Location1.Y=2508.544mil|Location2.Y=2516.211mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Text "IMU_MPU6050" (4.975mm,37.302mm) on Top Overlay And Pad Free-15(16.51mm,39.37mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1253.065mil|Location2.X=1264.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1253.065mil|Location2.X=1264.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.111mm &lt; 0.254mm) Between Track (5.351mm,20.646mm)(25.351mm,20.646mm) on Top Overlay And Pad IMU_MPU6050-7(6.571mm,21.646mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.111mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1353.065mil|Location2.X=1364.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1353.065mil|Location2.X=1364.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.111mm &lt; 0.254mm) Between Track (5.351mm,20.646mm)(25.351mm,20.646mm) on Top Overlay And Pad IMU_MPU6050-6(9.111mm,21.646mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.111mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1453.065mil|Location2.X=1464.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1453.065mil|Location2.X=1464.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.111mm &lt; 0.254mm) Between Track (5.351mm,20.646mm)(25.351mm,20.646mm) on Top Overlay And Pad IMU_MPU6050-5(11.651mm,21.646mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.111mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1553.065mil|Location2.X=1564.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1553.065mil|Location2.X=1564.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.111mm &lt; 0.254mm) Between Track (5.351mm,20.646mm)(25.351mm,20.646mm) on Top Overlay And Pad IMU_MPU6050-4(14.191mm,21.646mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.111mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1653.065mil|Location2.X=1664.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1653.065mil|Location2.X=1664.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.111mm &lt; 0.254mm) Between Track (5.351mm,20.646mm)(25.351mm,20.646mm) on Top Overlay And Pad IMU_MPU6050-3(16.731mm,21.646mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.111mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1753.065mil|Location2.X=1764.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1753.065mil|Location2.X=1764.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.111mm &lt; 0.254mm) Between Track (5.351mm,20.646mm)(25.351mm,20.646mm) on Top Overlay And Pad IMU_MPU6050-2(19.271mm,21.646mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.111mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1853.065mil|Location2.X=1864.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1853.065mil|Location2.X=1864.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.111mm &lt; 0.254mm) Between Track (5.351mm,20.646mm)(25.351mm,20.646mm) on Top Overlay And Pad IMU_MPU6050-1(21.811mm,21.646mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.111mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1985.257mil|Location2.X=1996.507mil|Location1.Y=1836.588mil|Location2.Y=1847.838mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1985.257mil|Location2.X=1996.507mil|Location1.Y=1836.588mil|Location2.Y=1847.838mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.111mm &lt; 0.254mm) Between Track (25.351mm,20.646mm)(25.351mm,35.646mm) on Top Overlay And Pad IMU_MPU6050-0(24.351mm,21.646mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.111mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1953.065mil|Location2.X=1964.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1953.065mil|Location2.X=1964.315mil|Location1.Y=1804.396mil|Location2.Y=1815.646mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.111mm &lt; 0.254mm) Between Track (5.351mm,20.646mm)(25.351mm,20.646mm) on Top Overlay And Pad IMU_MPU6050-0(24.351mm,21.646mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.111mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4004.428mil|Location2.X=4015.678mil|Location1.Y=4193.037mil|Location2.Y=4204.287mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4004.428mil|Location2.X=4015.678mil|Location1.Y=4193.037mil|Location2.Y=4204.287mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (76.234mm,81.5mm)(76.234mm,82.135mm) on Top Overlay And Pad C_RESET-2(77.25mm,81.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4004.428mil|Location2.X=4015.678mil|Location1.Y=4193.037mil|Location2.Y=4204.287mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4004.428mil|Location2.X=4015.678mil|Location1.Y=4193.037mil|Location2.Y=4204.287mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (76.234mm,80.865mm)(76.234mm,81.5mm) on Top Overlay And Pad C_RESET-2(77.25mm,81.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4004.428mil|Location2.X=4015.678mil|Location1.Y=4193.037mil|Location2.Y=4204.287mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4004.428mil|Location2.X=4015.678mil|Location1.Y=4193.037mil|Location2.Y=4204.287mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (73.948mm,81.5mm)(76.234mm,81.5mm) on Top Overlay And Pad C_RESET-2(77.25mm,81.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3866.999mil|Location2.X=3878.249mil|Location1.Y=4193.037mil|Location2.Y=4204.287mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3866.999mil|Location2.X=3878.249mil|Location1.Y=4193.037mil|Location2.Y=4204.287mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (73.186mm,80.865mm)(73.186mm,82.135mm) on Top Overlay And Pad C_RESET-1(72.17mm,81.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3866.999mil|Location2.X=3878.249mil|Location1.Y=4193.037mil|Location2.Y=4204.287mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3866.999mil|Location2.X=3878.249mil|Location1.Y=4193.037mil|Location2.Y=4204.287mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (73.186mm,81.5mm)(75.472mm,81.5mm) on Top Overlay And Pad C_RESET-1(72.17mm,81.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (21.734mm,4.5mm)(21.734mm,5.135mm) on Top Overlay And Pad C_IMU1-2(22.75mm,4.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (21.734mm,3.865mm)(21.734mm,4.5mm) on Top Overlay And Pad C_IMU1-2(22.75mm,4.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (19.448mm,4.5mm)(21.734mm,4.5mm) on Top Overlay And Pad C_IMU1-2(22.75mm,4.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (18.686mm,3.865mm)(18.686mm,5.135mm) on Top Overlay And Pad C_IMU1-1(17.67mm,4.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (18.686mm,4.5mm)(20.972mm,4.5mm) on Top Overlay And Pad C_IMU1-1(17.67mm,4.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1338.706mil|Location2.Y=1349.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1338.706mil|Location2.Y=1349.956mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (21.734mm,8.365mm)(21.734mm,9mm) on Top Overlay And Pad C_IMU2-2(22.75mm,9mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1338.706mil|Location2.Y=1349.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1338.706mil|Location2.Y=1349.956mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (21.734mm,9mm)(21.734mm,9.635mm) on Top Overlay And Pad C_IMU2-2(22.75mm,9mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1338.706mil|Location2.Y=1349.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1338.706mil|Location2.Y=1349.956mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (19.448mm,9mm)(21.734mm,9mm) on Top Overlay And Pad C_IMU2-2(22.75mm,9mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1338.706mil|Location2.Y=1349.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1338.706mil|Location2.Y=1349.956mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (18.686mm,8.365mm)(18.686mm,9.635mm) on Top Overlay And Pad C_IMU2-1(17.67mm,9mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1338.706mil|Location2.Y=1349.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1338.706mil|Location2.Y=1349.956mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (18.686mm,9mm)(20.972mm,9mm) on Top Overlay And Pad C_IMU2-1(17.67mm,9mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1535.556mil|Location2.Y=1546.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1535.556mil|Location2.Y=1546.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (21.734mm,14mm)(21.734mm,14.635mm) on Top Overlay And Pad C_IMU3-2(22.75mm,14mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1535.556mil|Location2.Y=1546.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1535.556mil|Location2.Y=1546.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (21.734mm,13.365mm)(21.734mm,14mm) on Top Overlay And Pad C_IMU3-2(22.75mm,14mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1535.556mil|Location2.Y=1546.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.758mil|Location2.X=1870.008mil|Location1.Y=1535.556mil|Location2.Y=1546.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (19.448mm,14mm)(21.734mm,14mm) on Top Overlay And Pad C_IMU3-2(22.75mm,14mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1535.556mil|Location2.Y=1546.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1535.556mil|Location2.Y=1546.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (18.686mm,13.365mm)(18.686mm,14.635mm) on Top Overlay And Pad C_IMU3-1(17.67mm,14mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1535.556mil|Location2.Y=1546.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1721.33mil|Location2.X=1732.58mil|Location1.Y=1535.556mil|Location2.Y=1546.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (18.686mm,14mm)(20.972mm,14mm) on Top Overlay And Pad C_IMU3-1(17.67mm,14mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.31mil|Location2.X=3710.56mil|Location1.Y=4439.099mil|Location2.Y=4450.349mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.31mil|Location2.X=3710.56mil|Location1.Y=4439.099mil|Location2.Y=4450.349mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (68.484mm,87.75mm)(68.484mm,88.385mm) on Top Overlay And Pad C_LNA_PWR-2(69.5mm,87.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.31mil|Location2.X=3710.56mil|Location1.Y=4439.099mil|Location2.Y=4450.349mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.31mil|Location2.X=3710.56mil|Location1.Y=4439.099mil|Location2.Y=4450.349mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (68.484mm,87.115mm)(68.484mm,87.75mm) on Top Overlay And Pad C_LNA_PWR-2(69.5mm,87.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.31mil|Location2.X=3710.56mil|Location1.Y=4439.099mil|Location2.Y=4450.349mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.31mil|Location2.X=3710.56mil|Location1.Y=4439.099mil|Location2.Y=4450.349mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (66.198mm,87.75mm)(68.484mm,87.75mm) on Top Overlay And Pad C_LNA_PWR-2(69.5mm,87.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3561.881mil|Location2.X=3573.131mil|Location1.Y=4439.099mil|Location2.Y=4450.349mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3561.881mil|Location2.X=3573.131mil|Location1.Y=4439.099mil|Location2.Y=4450.349mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (65.436mm,87.115mm)(65.436mm,88.385mm) on Top Overlay And Pad C_LNA_PWR-1(64.42mm,87.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3561.881mil|Location2.X=3573.131mil|Location1.Y=4439.099mil|Location2.Y=4450.349mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3561.881mil|Location2.X=3573.131mil|Location1.Y=4439.099mil|Location2.Y=4450.349mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (65.436mm,87.75mm)(67.722mm,87.75mm) on Top Overlay And Pad C_LNA_PWR-1(64.42mm,87.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5088.501mil|Location2.X=5096.167mil|Location1.Y=2019.631mil|Location2.Y=2027.298mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5088.501mil|Location2.X=5096.167mil|Location1.Y=2019.631mil|Location2.Y=2027.298mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (104.056mm,26.25mm)(105.072mm,26.25mm) on Top Overlay And Pad C_PWR-1(103.31mm,26.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4565.451mil|Location2.X=4576.701mil|Location1.Y=2155.635mil|Location2.Y=2166.885mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4565.451mil|Location2.X=4576.701mil|Location1.Y=2155.635mil|Location2.Y=2166.885mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (90.484mm,29.75mm)(90.484mm,30.385mm) on Top Overlay And Pad C5_OUT-2(91.5mm,29.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4565.451mil|Location2.X=4576.701mil|Location1.Y=2155.635mil|Location2.Y=2166.885mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4565.451mil|Location2.X=4576.701mil|Location1.Y=2155.635mil|Location2.Y=2166.885mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (90.484mm,29.115mm)(90.484mm,29.75mm) on Top Overlay And Pad C5_OUT-2(91.5mm,29.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4565.451mil|Location2.X=4576.701mil|Location1.Y=2155.635mil|Location2.Y=2166.885mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4565.451mil|Location2.X=4576.701mil|Location1.Y=2155.635mil|Location2.Y=2166.885mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (88.198mm,29.75mm)(90.484mm,29.75mm) on Top Overlay And Pad C5_OUT-2(91.5mm,29.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4428.023mil|Location2.X=4439.273mil|Location1.Y=2155.635mil|Location2.Y=2166.885mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4428.023mil|Location2.X=4439.273mil|Location1.Y=2155.635mil|Location2.Y=2166.885mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (87.436mm,29.115mm)(87.436mm,30.385mm) on Top Overlay And Pad C5_OUT-1(86.42mm,29.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4428.023mil|Location2.X=4439.273mil|Location1.Y=2155.635mil|Location2.Y=2166.885mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4428.023mil|Location2.X=4439.273mil|Location1.Y=2155.635mil|Location2.Y=2166.885mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (87.436mm,29.75mm)(89.722mm,29.75mm) on Top Overlay And Pad C5_OUT-1(86.42mm,29.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4421.33mil|Location2.X=4432.58mil|Location1.Y=3828.863mil|Location2.Y=3840.113mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4421.33mil|Location2.X=4432.58mil|Location1.Y=3828.863mil|Location2.Y=3840.113mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (87.266mm,71.615mm)(87.266mm,72.25mm) on Top Overlay And Pad C33_OUT-2(86.25mm,72.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4421.33mil|Location2.X=4432.58mil|Location1.Y=3828.863mil|Location2.Y=3840.113mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4421.33mil|Location2.X=4432.58mil|Location1.Y=3828.863mil|Location2.Y=3840.113mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (87.266mm,72.25mm)(87.266mm,72.885mm) on Top Overlay And Pad C33_OUT-2(86.25mm,72.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4421.33mil|Location2.X=4432.58mil|Location1.Y=3828.863mil|Location2.Y=3840.113mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4421.33mil|Location2.X=4432.58mil|Location1.Y=3828.863mil|Location2.Y=3840.113mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (87.266mm,72.25mm)(89.552mm,72.25mm) on Top Overlay And Pad C33_OUT-2(86.25mm,72.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4558.758mil|Location2.X=4570.008mil|Location1.Y=3828.863mil|Location2.Y=3840.113mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4558.758mil|Location2.X=4570.008mil|Location1.Y=3828.863mil|Location2.Y=3840.113mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (90.314mm,71.615mm)(90.314mm,72.885mm) on Top Overlay And Pad C33_OUT-1(91.33mm,72.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4558.758mil|Location2.X=4570.008mil|Location1.Y=3828.863mil|Location2.Y=3840.113mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4558.758mil|Location2.X=4570.008mil|Location1.Y=3828.863mil|Location2.Y=3840.113mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (88.028mm,72.25mm)(90.314mm,72.25mm) on Top Overlay And Pad C33_OUT-1(91.33mm,72.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4411.488mil|Location2.X=4422.738mil|Location1.Y=1259.966mil|Location2.Y=1271.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4411.488mil|Location2.X=4422.738mil|Location1.Y=1259.966mil|Location2.Y=1271.216mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (87.016mm,6.365mm)(87.016mm,7mm) on Top Overlay And Pad C6_OUT-2(86mm,7mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4411.488mil|Location2.X=4422.738mil|Location1.Y=1259.966mil|Location2.Y=1271.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4411.488mil|Location2.X=4422.738mil|Location1.Y=1259.966mil|Location2.Y=1271.216mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (87.016mm,7mm)(87.016mm,7.635mm) on Top Overlay And Pad C6_OUT-2(86mm,7mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4411.488mil|Location2.X=4422.738mil|Location1.Y=1259.966mil|Location2.Y=1271.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4411.488mil|Location2.X=4422.738mil|Location1.Y=1259.966mil|Location2.Y=1271.216mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (87.016mm,7mm)(89.302mm,7mm) on Top Overlay And Pad C6_OUT-2(86mm,7mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4548.916mil|Location2.X=4560.166mil|Location1.Y=1259.966mil|Location2.Y=1271.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4548.916mil|Location2.X=4560.166mil|Location1.Y=1259.966mil|Location2.Y=1271.216mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (90.064mm,6.365mm)(90.064mm,7.635mm) on Top Overlay And Pad C6_OUT-1(91.08mm,7mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4548.916mil|Location2.X=4560.166mil|Location1.Y=1259.966mil|Location2.Y=1271.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4548.916mil|Location2.X=4560.166mil|Location1.Y=1259.966mil|Location2.Y=1271.216mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (87.778mm,7mm)(90.064mm,7mm) on Top Overlay And Pad C6_OUT-1(91.08mm,7mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3614.277mil|Location2.X=3621.943mil|Location1.Y=4589.149mil|Location2.Y=4596.816mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3614.277mil|Location2.X=3621.943mil|Location1.Y=4589.149mil|Location2.Y=4596.816mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (66.5mm,91.25mm)(66.5mm,91.75mm) on Top Overlay And Pad RESET_SW-1(66.5mm,91.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3626.804mil|Location2.X=3639.85mil|Location1.Y=4587.565mil|Location2.Y=4598.815mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3626.804mil|Location2.X=3639.85mil|Location1.Y=4587.565mil|Location2.Y=4598.815mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.033mm &lt; 0.254mm) Between Track (67mm,91.75mm)(67mm,97.75mm) on Top Overlay And Pad RESET_SW-1(66.5mm,91.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.033mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3606.403mil|Location2.X=3614.07mil|Location1.Y=4590.503mil|Location2.Y=4598.169mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3606.403mil|Location2.X=3614.07mil|Location1.Y=4590.503mil|Location2.Y=4598.169mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (61mm,91.75mm)(67mm,91.75mm) on Top Overlay And Pad RESET_SW-1(66.5mm,91.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3614.277mil|Location2.X=3621.943mil|Location1.Y=4844.429mil|Location2.Y=4852.096mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3614.277mil|Location2.X=3621.943mil|Location1.Y=4844.429mil|Location2.Y=4852.096mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (66.5mm,97.75mm)(66.5mm,98.25mm) on Top Overlay And Pad RESET_SW-2(66.5mm,98.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3626.804mil|Location2.X=3638.878mil|Location1.Y=4841.815mil|Location2.Y=4853.065mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3626.804mil|Location2.X=3638.878mil|Location1.Y=4841.815mil|Location2.Y=4853.065mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.033mm &lt; 0.254mm) Between Track (67mm,91.75mm)(67mm,97.75mm) on Top Overlay And Pad RESET_SW-2(66.5mm,98.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.033mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3606.403mil|Location2.X=3614.07mil|Location1.Y=4844.434mil|Location2.Y=4852.101mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3606.403mil|Location2.X=3614.07mil|Location1.Y=4844.434mil|Location2.Y=4852.101mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (61mm,97.75mm)(67mm,97.75mm) on Top Overlay And Pad RESET_SW-2(66.5mm,98.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3417.427mil|Location2.X=3425.093mil|Location1.Y=4844.429mil|Location2.Y=4852.096mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3417.427mil|Location2.X=3425.093mil|Location1.Y=4844.429mil|Location2.Y=4852.096mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (61.5mm,97.75mm)(61.5mm,98.25mm) on Top Overlay And Pad RESET_SW-2(61.5mm,98.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3401.316mil|Location2.X=3414.361mil|Location1.Y=4841.815mil|Location2.Y=4853.065mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3401.316mil|Location2.X=3414.361mil|Location1.Y=4841.815mil|Location2.Y=4853.065mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.033mm &lt; 0.254mm) Between Track (61mm,91.75mm)(61mm,97.75mm) on Top Overlay And Pad RESET_SW-2(61.5mm,98.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.033mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3409.552mil|Location2.X=3417.219mil|Location1.Y=4844.434mil|Location2.Y=4852.101mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3409.552mil|Location2.X=3417.219mil|Location1.Y=4844.434mil|Location2.Y=4852.101mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (61mm,97.75mm)(67mm,97.75mm) on Top Overlay And Pad RESET_SW-2(61.5mm,98.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3417.427mil|Location2.X=3425.093mil|Location1.Y=4589.149mil|Location2.Y=4596.816mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3417.427mil|Location2.X=3425.093mil|Location1.Y=4589.149mil|Location2.Y=4596.816mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (61.5mm,91.25mm)(61.5mm,91.75mm) on Top Overlay And Pad RESET_SW-1(61.5mm,91.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3401.316mil|Location2.X=3413.39mil|Location1.Y=4587.565mil|Location2.Y=4598.815mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3401.316mil|Location2.X=3413.39mil|Location1.Y=4587.565mil|Location2.Y=4598.815mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.033mm &lt; 0.254mm) Between Track (61mm,91.75mm)(61mm,97.75mm) on Top Overlay And Pad RESET_SW-1(61.5mm,91.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.033mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3409.552mil|Location2.X=3417.219mil|Location1.Y=4590.503mil|Location2.Y=4598.169mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3409.552mil|Location2.X=3417.219mil|Location1.Y=4590.503mil|Location2.Y=4598.169mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (61mm,91.75mm)(67mm,91.75mm) on Top Overlay And Pad RESET_SW-1(61.5mm,91.25mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.532mil|Location2.X=4594.199mil|Location1.Y=2797.19mil|Location2.Y=2804.857mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4586.532mil|Location2.X=4594.199mil|Location1.Y=2797.19mil|Location2.Y=2804.857mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (91.306mm,46mm)(92.322mm,46mm) on Top Overlay And Pad C5_IN-1(90.56mm,46mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4396.974mil|Location2.X=4404.641mil|Location1.Y=3062.938mil|Location2.Y=3070.605mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4396.974mil|Location2.X=4404.641mil|Location1.Y=3062.938mil|Location2.Y=3070.605mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (85.238mm,52.75mm)(86.254mm,52.75mm) on Top Overlay And Pad C33_IN-1(87mm,52.75mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4303.43mil|Location2.X=4314.68mil|Location1.Y=4310.719mil|Location2.Y=4321.969mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4303.43mil|Location2.X=4314.68mil|Location1.Y=4310.719mil|Location2.Y=4321.969mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Track (84.05mm,84.04mm)(84.05mm,84.269mm) on Top Overlay And Pad RESET_R-1(84.05mm,85.31mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4303.43mil|Location2.X=4314.68mil|Location1.Y=4075.354mil|Location2.Y=4086.604mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4303.43mil|Location2.X=4314.68mil|Location1.Y=4075.354mil|Location2.Y=4086.604mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Track (84.05mm,78.731mm)(84.05mm,78.96mm) on Top Overlay And Pad RESET_R-2(84.05mm,77.69mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=1890.314mil|Location2.Y=1901.564mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=1890.314mil|Location2.Y=1901.564mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Track (30mm,23.231mm)(30mm,23.46mm) on Top Overlay And Pad RS422_R-1(30mm,22.19mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=2125.68mil|Location2.Y=2136.93mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.477mil|Location2.X=2186.727mil|Location1.Y=2125.68mil|Location2.Y=2136.93mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Track (30mm,28.54mm)(30mm,28.769mm) on Top Overlay And Pad RS422_R-2(30mm,29.81mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1438.68mil|Location2.X=1449.93mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1438.68mil|Location2.X=1449.93mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (11.064mm,4.5mm)(11.064mm,5.135mm) on Top Overlay And Pad CMAX485-2(12.08mm,4.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1438.68mil|Location2.X=1449.93mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1438.68mil|Location2.X=1449.93mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (11.064mm,3.865mm)(11.064mm,4.5mm) on Top Overlay And Pad CMAX485-2(12.08mm,4.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1438.68mil|Location2.X=1449.93mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1438.68mil|Location2.X=1449.93mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (8.778mm,4.5mm)(11.064mm,4.5mm) on Top Overlay And Pad CMAX485-2(12.08mm,4.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1301.251mil|Location2.X=1312.501mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1301.251mil|Location2.X=1312.501mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (8.016mm,3.865mm)(8.016mm,5.135mm) on Top Overlay And Pad CMAX485-1(7mm,4.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1301.251mil|Location2.X=1312.501mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1301.251mil|Location2.X=1312.501mil|Location1.Y=1161.54mil|Location2.Y=1172.79mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Track (8.016mm,4.5mm)(10.302mm,4.5mm) on Top Overlay And Pad CMAX485-1(7mm,4.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5117.963mil|Location2.X=5129.213mil|Location1.Y=3366.265mil|Location2.Y=3377.515mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5117.963mil|Location2.X=5129.213mil|Location1.Y=3366.265mil|Location2.Y=3377.515mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Track (104.29mm,60.5mm)(104.519mm,60.5mm) on Top Overlay And Pad PV_R-1(105.56mm,60.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4882.598mil|Location2.X=4893.848mil|Location1.Y=3366.265mil|Location2.Y=3377.515mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4882.598mil|Location2.X=4893.848mil|Location1.Y=3366.265mil|Location2.Y=3377.515mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Track (98.981mm,60.5mm)(99.21mm,60.5mm) on Top Overlay And Pad PV_R-2(97.94mm,60.5mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5157.333mil|Location2.X=5168.583mil|Location1.Y=2716.659mil|Location2.Y=2727.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5157.333mil|Location2.X=5168.583mil|Location1.Y=2716.659mil|Location2.Y=2727.909mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Track (105.29mm,44mm)(105.519mm,44mm) on Top Overlay And Pad PWR_R-1(106.56mm,44mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4921.968mil|Location2.X=4933.218mil|Location1.Y=2716.659mil|Location2.Y=2727.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4921.968mil|Location2.X=4933.218mil|Location1.Y=2716.659mil|Location2.Y=2727.909mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Track (99.981mm,44mm)(100.21mm,44mm) on Top Overlay And Pad PWR_R-2(98.94mm,44mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3903.174mil|Location2.X=3910.841mil|Location1.Y=3827.702mil|Location2.Y=3835.369mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3903.174mil|Location2.X=3910.841mil|Location1.Y=3827.702mil|Location2.Y=3835.369mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (33.785mm,72.175mm)(79.505mm,72.175mm) on Top Overlay And Pad GPS-21(73.79mm,69mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2553.174mil|Location2.X=2560.841mil|Location1.Y=3827.702mil|Location2.Y=3835.369mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2553.174mil|Location2.X=2560.841mil|Location1.Y=3827.702mil|Location2.Y=3835.369mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (33.785mm,72.175mm)(79.505mm,72.175mm) on Top Overlay And Pad GPS-22(39.5mm,69mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2553.174mil|Location2.X=2560.841mil|Location1.Y=1027.702mil|Location2.Y=1035.369mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2553.174mil|Location2.X=2560.841mil|Location1.Y=1027.702mil|Location2.Y=1035.369mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (33.785mm,1.055mm)(79.505mm,1.055mm) on Top Overlay And Pad GPS-23(39.5mm,4.23mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3903.174mil|Location2.X=3910.841mil|Location1.Y=1027.702mil|Location2.Y=1035.369mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3903.174mil|Location2.X=3910.841mil|Location1.Y=1027.702mil|Location2.Y=1035.369mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (33.785mm,1.055mm)(79.505mm,1.055mm) on Top Overlay And Pad GPS-24(73.79mm,4.23mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDN34J3SNYYY2JDWPEHAGAAVBYWJAGVCJAP4PKKCLCDMVATVED0SXL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4941.44mil|Location2.X=4952.69mil|Location1.Y=2325.734mil|Location2.Y=2336.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4941.44mil|Location2.X=4952.69mil|Location1.Y=2325.734mil|Location2.Y=2336.984mil|Absolute=True">Silk To Silk Clearance Constraint: (0.249mm &lt; 0.254mm) Between Text "PWR_SW" (99.75mm,29.5mm) on Top Overlay And Track (100.48mm,30.69mm)(100.48mm,35.77mm) on Top Overlay Silk Text to Silk Clearance [0.249mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4993.715mil|Location2.X=5004.965mil|Location1.Y=3129.289mil|Location2.Y=3140.539mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4993.715mil|Location2.X=5004.965mil|Location1.Y=3129.289mil|Location2.Y=3140.539mil|Absolute=True">Silk To Silk Clearance Constraint: (0.222mm &lt; 0.254mm) Between Text "+" (101.25mm,54.5mm) on Top Overlay And Track (97.94mm,54.27mm)(103.02mm,54.27mm) on Top Overlay Silk Text to Silk Clearance [0.222mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4993.715mil|Location2.X=5004.965mil|Location1.Y=2894.573mil|Location2.Y=2905.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4993.715mil|Location2.X=5004.965mil|Location1.Y=2894.573mil|Location2.Y=2905.823mil|Absolute=True">Silk To Silk Clearance Constraint: (0.222mm &lt; 0.254mm) Between Text "+" (101.25mm,47.5mm) on Top Overlay And Track (97.94mm,48.73mm)(103.02mm,48.73mm) on Top Overlay Silk Text to Silk Clearance [0.222mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2323.115mil|Location2.X=2334.365mil|Location1.Y=4649.821mil|Location2.Y=4661.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2323.115mil|Location2.X=2334.365mil|Location1.Y=4649.821mil|Location2.Y=4661.071mil|Absolute=True">Silk To Silk Clearance Constraint: (0.055mm &lt; 0.254mm) Between Text "PV" (33.75mm,92mm) on Top Overlay And Track (30.48mm,93.23mm)(35.56mm,93.23mm) on Top Overlay Silk Text to Silk Clearance [0.055mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2194.375mil|Location2.X=2205.625mil|Location1.Y=4649.821mil|Location2.Y=4661.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2194.375mil|Location2.X=2205.625mil|Location1.Y=4649.821mil|Location2.Y=4661.071mil|Absolute=True">Silk To Silk Clearance Constraint: (0.055mm &lt; 0.254mm) Between Text "PPS" (30.25mm,92mm) on Top Overlay And Track (30.48mm,93.23mm)(35.56mm,93.23mm) on Top Overlay Silk Text to Silk Clearance [0.055mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2391.282mil|Location2.X=2404.216mil|Location1.Y=4649.896mil|Location2.Y=4661.146mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2391.282mil|Location2.X=2404.216mil|Location1.Y=4649.896mil|Location2.Y=4661.146mil|Absolute=True">Silk To Silk Clearance Constraint: (0.097mm &lt; 0.254mm) Between Text "PV" (33.75mm,92mm) on Top Overlay And Track (35.56mm,93.23mm)(35.56mm,95.77mm) on Top Overlay Silk Text to Silk Clearance [0.097mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2194.375mil|Location2.X=2205.625mil|Location1.Y=4649.821mil|Location2.Y=4661.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2194.375mil|Location2.X=2205.625mil|Location1.Y=4649.821mil|Location2.Y=4661.071mil|Absolute=True">Silk To Silk Clearance Constraint: (0.055mm &lt; 0.254mm) Between Text "PPS" (30.25mm,92mm) on Top Overlay And Track (30.48mm,93.23mm)(30.48mm,95.77mm) on Top Overlay Silk Text to Silk Clearance [0.055mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3130.195mil|Location2.X=3141.445mil|Location1.Y=4649.821mil|Location2.Y=4661.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3130.195mil|Location2.X=3141.445mil|Location1.Y=4649.821mil|Location2.Y=4661.071mil|Absolute=True">Silk To Silk Clearance Constraint: (0.055mm &lt; 0.254mm) Between Text "2" (53.75mm,92mm) on Top Overlay And Track (50.44mm,93.23mm)(55.52mm,93.23mm) on Top Overlay Silk Text to Silk Clearance [0.055mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3038.336mil|Location2.X=3049.586mil|Location1.Y=4649.821mil|Location2.Y=4661.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3038.336mil|Location2.X=3049.586mil|Location1.Y=4649.821mil|Location2.Y=4661.071mil|Absolute=True">Silk To Silk Clearance Constraint: (0.055mm &lt; 0.254mm) Between Text "1" (51.75mm,92mm) on Top Overlay And Track (50.44mm,93.23mm)(55.52mm,93.23mm) on Top Overlay Silk Text to Silk Clearance [0.055mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2966.243mil|Location2.X=2977.493mil|Location1.Y=4354.767mil|Location2.Y=4366.547mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2966.243mil|Location2.X=2977.493mil|Location1.Y=4354.767mil|Location2.Y=4366.547mil|Absolute=True">Silk To Silk Clearance Constraint: (0.244mm &lt; 0.254mm) Between Text "5V" (50.25mm,84.5mm) on Top Overlay And Track (49.9mm,85.73mm)(49.9mm,88.27mm) on Top Overlay Silk Text to Silk Clearance [0.244mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3071.147mil|Location2.X=3082.397mil|Location1.Y=4354.546mil|Location2.Y=4365.796mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3071.147mil|Location2.X=3082.397mil|Location1.Y=4354.546mil|Location2.Y=4365.796mil|Absolute=True">Silk To Silk Clearance Constraint: (0.055mm &lt; 0.254mm) Between Text "D+" (52.75mm,84.5mm) on Top Overlay And Track (49.9mm,85.73mm)(60.06mm,85.73mm) on Top Overlay Silk Text to Silk Clearance [0.055mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2972.721mil|Location2.X=2983.971mil|Location1.Y=4354.546mil|Location2.Y=4365.796mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2972.721mil|Location2.X=2983.971mil|Location1.Y=4354.546mil|Location2.Y=4365.796mil|Absolute=True">Silk To Silk Clearance Constraint: (0.055mm &lt; 0.254mm) Between Text "5V" (50.25mm,84.5mm) on Top Overlay And Track (49.9mm,85.73mm)(60.06mm,85.73mm) on Top Overlay Silk Text to Silk Clearance [0.055mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3287.676mil|Location2.X=3298.926mil|Location1.Y=4354.546mil|Location2.Y=4365.796mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3287.676mil|Location2.X=3298.926mil|Location1.Y=4354.546mil|Location2.Y=4365.796mil|Absolute=True">Silk To Silk Clearance Constraint: (0.055mm &lt; 0.254mm) Between Text "GND" (57.75mm,84.5mm) on Top Overlay And Track (49.9mm,85.73mm)(60.06mm,85.73mm) on Top Overlay Silk Text to Silk Clearance [0.055mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3169.572mil|Location2.X=3180.822mil|Location1.Y=4354.546mil|Location2.Y=4365.796mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3169.572mil|Location2.X=3180.822mil|Location1.Y=4354.546mil|Location2.Y=4365.796mil|Absolute=True">Silk To Silk Clearance Constraint: (0.055mm &lt; 0.254mm) Between Text "D-" (55.25mm,84.5mm) on Top Overlay And Track (49.9mm,85.73mm)(60.06mm,85.73mm) on Top Overlay Silk Text to Silk Clearance [0.055mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3358.942mil|Location2.X=3370.192mil|Location1.Y=4354.546mil|Location2.Y=4365.796mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3358.942mil|Location2.X=3370.192mil|Location1.Y=4354.546mil|Location2.Y=4365.796mil|Absolute=True">Silk To Silk Clearance Constraint: (0.055mm &lt; 0.254mm) Between Text "GND" (57.75mm,84.5mm) on Top Overlay And Track (60.06mm,85.73mm)(60.06mm,88.27mm) on Top Overlay Silk Text to Silk Clearance [0.055mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2325.673mil|Location2.X=2333.34mil|Location1.Y=2406.266mil|Location2.Y=2413.933mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\gps_imu.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2325.673mil|Location2.X=2333.34mil|Location1.Y=2406.266mil|Location2.Y=2413.933mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "MPU_SW" (33.5mm,31.5mm) on Top Overlay And Track (33.785mm,1.055mm)(33.785mm,72.175mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

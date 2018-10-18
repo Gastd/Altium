@@ -1,0 +1,63 @@
+Removed Pin From Net: NetName=12V Pin=C5_IN-1
+Removed Pin From Net: NetName=5V Pin=C5_OUT-1
+Removed Pin From Net: NetName=12V Pin=C6_IN-1
+Removed Pin From Net: NetName=6V Pin=C6_OUT-1
+Removed Pin From Net: NetName=5V Pin=C33_IN-1
+Removed Pin From Net: NetName=3.3V Pin=C33_OUT-1
+Removed Pin From Net: NetName=12V Pin=CSW-2
+Removed Pin From Net: NetName=5V Pin=IMU_MPU6050-0
+Removed Pin From Net: NetName=12V Pin=PWR-1
+Removed Pin From Net: NetName=12V Pin=PWR-3
+Removed Pin From Net: NetName=12V Pin=PWR_SW-2
+Removed Pin From Net: NetName=5V Pin=STM32F103C8-3
+Removed Member From Class: ClassName=Sheet1 Member=CSW
+Removed Member From Class: ClassName=Sheet1 Member=PWR
+Change Component Designator: OldDesignator=C5_IN NewDesignator=C5_OUT
+Change Component Designator: OldDesignator=C5_OUT NewDesignator=C5_IN
+Change Component Designator: OldDesignator=C6_IN NewDesignator=C6_OUT
+Change Component Designator: OldDesignator=C6_OUT NewDesignator=C6_IN
+Change Component Designator: OldDesignator=C33_IN NewDesignator=C33_OUT
+Change Component Designator: OldDesignator=C33_OUT NewDesignator=C33_IN
+Added Component: Designator=C_MPU(C_NANO_HOLES)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Added Component: Designator=C_STM32(C_NANO_HOLES)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Added Component: Designator=MPU_SW(HDR1X3)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=12V Pin=C5_IN-1
+Added Pin To Net: NetName=5V Pin=C5_OUT-1
+Added Pin To Net: NetName=12V Pin=C6_IN-1
+Added Pin To Net: NetName=6V Pin=C6_OUT-1
+Added Pin To Net: NetName=5V Pin=C33_IN-1
+Added Pin To Net: NetName=3.3V Pin=C33_OUT-1
+Added Pin To Net: NetName=GND Pin=C_MPU-1
+Added Pin To Net: NetName=GND Pin=C_STM32-1
+Added Pin To Net: NetName=3.3V Pin=C_STM32-2
+Added Pin To Net: NetName=5V Pin=MPU_SW-1
+Added Pin To Net: NetName=3.3V Pin=MPU_SW-3
+Added Pin To Net: NetName=12V Pin=PWR_SW-1
+Added Pin To Net: NetName=GND Pin=PWR_SW-2
+Added Pin To Net: NetName=3.3V Pin=STM32F103C8-3
+Added Pin To Net: NetName=MPU_VIN Pin=C_MPU-2
+Added Pin To Net: NetName=MPU_VIN Pin=IMU_MPU6050-0
+Added Pin To Net: NetName=MPU_VIN Pin=MPU_SW-2
+Added Net: Name=MPU_VIN
+Added Member To Class: ClassName=Sheet1 Member=Component C_MPU 100nF
+Added Member To Class: ClassName=Sheet1 Member=Component C_STM32 100nF
+Added Member To Class: ClassName=Sheet1 Member=Component GPS Header 10X2
+Added Member To Class: ClassName=Sheet1 Member=Component MPU_SW Header 3

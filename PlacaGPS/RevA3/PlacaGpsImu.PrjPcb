@@ -28,7 +28,7 @@ DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
-OutputPath=
+OutputPath=Project Outputs for PlacaGpsImu
 LogFolderPath=
 ManagedProjectGUID=
 LinkedManagedProjectGUID=
@@ -4798,10 +4798,14 @@ GenerateClassCluster=0
 DocumentUniqueId=GJIWOLYG
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for PlacaGpsImu\PlacaGpsImu.txt
+DocumentPath=Project Outputs for PlacaGpsImu\Design Rule Check - gps_imu.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
+DocumentPath=Project Outputs for PlacaGpsImu\PlacaGpsImu.txt
+DItemRevisionGUID=
+
+[GeneratedDocument3]
 DocumentPath=Project Outputs for PlacaGpsImu\PlacaGpsImu.xls
 DItemRevisionGUID=
 
@@ -4855,7 +4859,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=-1
 
 [Generic_EDE]
-OutputDir=
+OutputDir=Project Outputs for PlacaGpsImu
 
 [OutputGroup1]
 Name=Netlist Outputs
