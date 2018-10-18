@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=3.3V Pin=STM32F103C8-3
+Added Pin To Net: NetName=3.3V Pin=STM32F103C8-1
