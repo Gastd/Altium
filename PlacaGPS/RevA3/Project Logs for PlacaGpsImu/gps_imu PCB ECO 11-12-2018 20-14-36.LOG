@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=GND Pin=RESET_SW-1
+Removed Pin From Net: NetName=GND Pin=RESET_SW-1
+Removed Pin From Net: NetName=GPS_RESETIN Pin=RESET_SW-2
+Removed Pin From Net: NetName=GPS_RESETIN Pin=RESET_SW-2
+Removed Member From Class: ClassName=Sheet1 Member=RESET_SW
+PCB-ECO: Change Pad Pin/Pkg Length: Old=2mm New=0mm
