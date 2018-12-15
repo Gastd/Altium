@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=GPS Old Footprint=GPS_BOARD New Footprint=HDR2x10_2mm
+Change Component Designator: OldDesignator=PWR NewDesignator=PWR_SW
+Added Member To Class: ClassName=Sheet1 Member=Component C_LNA_PWR 100nF
+Added Member To Class: ClassName=Sheet1 Member=Component PWR_LED PWR

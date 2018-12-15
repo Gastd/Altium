@@ -28,7 +28,7 @@ DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
-OutputPath=
+OutputPath=Project Outputs for PlacaGpsImu
 LogFolderPath=
 ManagedProjectGUID=
 LinkedManagedProjectGUID=
@@ -4869,7 +4869,7 @@ AddNetNetLabels=-1
 AddNetPorts=-1
 ShowComponentParameters=-1
 GlobalBookmarks=0
-ExportBOM=0
+ExportBOM=-1
 TemplateFilename=C:\Users\gabri\Dropbox\Altium\PlacaGPS\RevA3\Board Stack Report.XLT
 TemplateStoreRelative=0
 PCB_PrintColor=1
@@ -4893,7 +4893,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=-1
 
 [Generic_EDE]
-OutputDir=
+OutputDir=Project Outputs for PlacaGpsImu
 
 [OutputGroup1]
 Name=Netlist Outputs
